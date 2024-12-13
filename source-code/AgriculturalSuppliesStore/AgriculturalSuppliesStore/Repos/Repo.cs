@@ -42,26 +42,11 @@ namespace AgriculturalSuppliesStore.Repos
         public void Update(string id, T obj) 
         {
             id = id.ToUpper();
-            string itemId = "";
-            bool exists = list.Any(item =>
+            int itemIndex = list.FindIndex(item => item.Id == id);
+            if (itemIndex >= 0)
             {
-                if (item.Equals(obj))
-                {
-                    itemId = item.Id;
-                    return true;
-                }
-                return false;
-            });
-
-            if (!exists)
-            {
-                int itemIndex = list.FindIndex(item => item.Id == id);
                 list[itemIndex] = obj;
                 Console.WriteLine($"\u2705 Cập nhật thành công - Đối tượng có mã {id}");
-            }
-            else
-            {
-                Console.WriteLine($"\u274C Cập nhật thất bại - Đối tượng đang tồn tại có mã {itemId}");
             }
         }
 

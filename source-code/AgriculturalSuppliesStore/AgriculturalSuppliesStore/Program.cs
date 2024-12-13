@@ -22,25 +22,40 @@ namespace AgriculturalSuppliesStore
             Repo<ProductComponent> repoProductComponent = new Repo<ProductComponent>();
             Repo<ProductUse> repoProductUse = new Repo<ProductUse>();
 
-            // Thêm dữ liệu mẫu cho repoGroupProduct
-            repoGroupProduct.Add(new GroupProduct("GP00001", "Phân bón hữu cơ", "Sản phẩm phân bón từ thiên nhiên", "E001"));
-            repoGroupProduct.Add(new GroupProduct("GP00002", "Phân bón hóa học", "Phân bón cung cấp chất dinh dưỡng nhanh", "E002"));
-            repoGroupProduct.Add(new GroupProduct("GP00003", "Thuốc trừ sâu", "Sản phẩm bảo vệ thực vật", "E003"));
-            repoGroupProduct.Add(new GroupProduct("GP00004", "Hạt giống", "Cung cấp hạt giống chất lượng", "E004"));
-            repoGroupProduct.Add(new GroupProduct("GP00005", "Công cụ làm vườn", "Các công cụ hỗ trợ làm vườn", "E005"));
+            //Dữ liệu thử
+            repoGroupProduct.Add(new GroupProduct("GP00001", "Phân bón hữu cơ", "Cải tạo đất, thân thiện môi trường", "E00002"));
+            repoGroupProduct.Add(new GroupProduct("GP00002", "Phân bón NPK 16-16-8", "Cân đối dinh dưỡng cây trồng", "E00003"));
+            repoGroupProduct.Add(new GroupProduct("GP00003", "Phân đạm Urea", "Tăng năng suất, dễ sử dụng", "E00002"));
 
-            // Thêm dữ liệu mẫu cho repoFertilizer
-            repoFertilizer.Add(new Fertilizer("F00001", "Phân hữu cơ xanh", 50000, 100, "Phân bón thân thiện môi trường", "Bao",
-                new DateTime(2023, 1, 15), new DateTime(2025, 1, 15), "B001", "GP00001"));
-            repoFertilizer.Add(new Fertilizer("F00002", "Phân NPK 16-16-8", 60000, 200, "Phân NPK hỗn hợp", "Túi",
-                new DateTime(2023, 3, 10), new DateTime(2025, 3, 10), "B002", "GP00002"));
-            repoFertilizer.Add(new Fertilizer("F00003", "Phân Kali", 70000, 150, "Phân Kali tăng cường sức đề kháng", "Bao",
-                new DateTime(2023, 5, 20), new DateTime(2026, 5, 20), "B003", "GP00002"));
-            repoFertilizer.Add(new Fertilizer("F00004", "Phân Ure", 80000, 120, "Phân Ure cung cấp đạm", "Túi",
-                new DateTime(2023, 6, 25), new DateTime(2024, 6, 25), "B004", "GP00002"));
-            repoFertilizer.Add(new Fertilizer("F00005", "Phân hữu cơ vi sinh", 90000, 80, "Phân hữu cơ cải tạo đất", "Thùng",
-                new DateTime(2022, 11, 5), new DateTime(2024, 11, 5), "B005", "GP00001"));
+            repoEmployee.Add(new Employee("E00001", "Nguyễn Văn A", new DateTime(1985, 5, 20), "0912345678", "Hà Nội", "Nhân viên kỹ thuật"));
+            repoEmployee.Add(new Employee("E00002", "Trần Thị B", new DateTime(1990, 7, 15), "0987654321", "TP. Hồ Chí Minh", "Nhân viên bán hàng"));
+            repoEmployee.Add(new Employee("E00003", "Lê Văn C", new DateTime(1995, 3, 10), "0901234567", "Đà Nẵng", "Nhân viên bán hàng"));
 
+            repoFertilizer.Add(new Fertilizer("F00001", "Phân bón hữu cơ", 150000, 100, "Cải tạo đất, thân thiện môi trường", "Bao 25kg", new DateTime(2023, 1, 15), new DateTime(2025, 1, 15), "B00001", "GP00001"));
+            repoFertilizer.Add(new Fertilizer("F00002", "Phân bón NPK 16-16-8", 250000, 200, "Cân đối dinh dưỡng cây trồng", "Bao 50kg", new DateTime(2023, 6, 10), new DateTime(2025, 6, 10), "B00002", "GP00002"));
+            repoFertilizer.Add(new Fertilizer("F00003", "Phân đạm Urea", 220000, 150, "Tăng năng suất, dễ sử dụng", "Bao 50kg", new DateTime(2023, 3, 5), new DateTime(2025, 3, 5), "B00003", "GP00003"));
+
+            repoComponent.Add(new Component("C00001", "Đạm (Nitơ)", 16.0f, "Giúp cây phát triển thân, lá."));
+            repoComponent.Add(new Component("C00002", "Lân (Phốt pho)", 8.0f, "Thúc đẩy ra hoa và kết trái."));
+            repoComponent.Add(new Component("C00003", "Kali (K)", 16.0f, "Cải thiện khả năng chịu hạn, sâu bệnh."));
+
+            repoUse.Add(new Use("U00001", "Thúc đẩy sinh trưởng", "Tăng trưởng nhanh, phát triển toàn diện."));
+            repoUse.Add(new Use("U00002", "Ra hoa, kết trái", "Thúc đẩy ra hoa đều, quả chắc, ít rụng."));
+            repoUse.Add(new Use("U00003", "Cải thiện đất", "Cải thiện kết cấu đất, tăng độ phì nhiêu."));
+
+            repoBrand.Add(new Brand("B00001", "Việt Nga", "contact@vietnga.com", "0241234567", "Hà Nội, Việt Nam", "Việt Nam"));
+            repoBrand.Add(new Brand("B00002", "Phân Bón Hữu Cơ ABC", "support@phanonhucabc.com", "0287654321", "TP. Hồ Chí Minh, Việt Nam", "Việt Nam"));
+            repoBrand.Add(new Brand("B00003", "AgroChem", "info@agrochem.com", "0298765432", "Đà Nẵng, Việt Nam", "Việt Nam"));
+
+            repoProductUse.Add(new ProductUse("PU00001", "F00001", "U00001"));
+            repoProductUse.Add(new ProductUse("PU00002", "F00002", "U00002"));
+            repoProductUse.Add(new ProductUse("PU00003", "F00003", "U00003"));
+
+            repoProductComponent.Add(new ProductComponent("PC00001", "F00001", "C00001"));
+            repoProductComponent.Add(new ProductComponent("PC00001", "F00002", "C00002"));
+            repoProductComponent.Add(new ProductComponent("PC00001", "F00003", "C00003"));
+
+            Console.Clear();
 
             Management();
 
@@ -52,7 +67,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine($"+{new string('-', 50)}+");
                     Console.WriteLine("| Ứng dụng quản lý cửa hàng bán vật tư nông nghiệp |");
                     Console.WriteLine($"+{new string('-', 50)}+");
-                    Console.WriteLine($"| {"",18}{"Menu quản lý",-30} |");
+                    Console.WriteLine($"| {"",17}{"Menu quản lý",-31} |");
                     Console.WriteLine($"+{new string('-', 50)}+");
                     Console.WriteLine($"| {"[1] Quản lý danh mục nhóm sản phẩm",-48} |");
                     Console.WriteLine($"| {"[2] Quản lý danh mục sản phẩm",-48} |");
@@ -79,10 +94,10 @@ namespace AgriculturalSuppliesStore
                             UseManagement();
                             break;
                         case "5":
-
+                            BrandManagement();
                             break;
                         case "6":
-
+                            EmployeeManagement();
                             break;
                         case "0":
                             exit = true;
@@ -151,69 +166,20 @@ namespace AgriculturalSuppliesStore
                 //AddGroupProduct
                 void AddGroupProduct()
                 {
-                    string id;
-                    if (repoGroupProduct.List.Count == 0)
-                    {
-                        id = "GP00001";
-                    }
-                    else
-                    {
-                        string lastId = repoGroupProduct.List[repoGroupProduct.List.Count - 1].Id;
-                        int idToNum = int.Parse(lastId.Substring(2)) + 1;
-                        id = "GP" + idToNum.ToString().PadLeft(5, '0');
-                    }
+                    string id = repoGroupProduct.List.Count == 0 ? "GP00001" : "GP" + (int.Parse(repoGroupProduct.List[repoGroupProduct.List.Count - 1].Id.Substring(2)) + 1).ToString().PadLeft(5, '0');
 
-                    string name;
-                    do
-                    {
-                        Console.Write("Nhập tên nhóm sản phẩm: ");
-                        name = Console.ReadLine();
-                        if (string.IsNullOrWhiteSpace(name))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Tên nhóm không thể để trống. Vui lòng nhập lại.");
-                        }
-                    } while (string.IsNullOrWhiteSpace(name));
+                    Console.Write("Nhập tên nhóm sản phẩm: ");
+                    string name = Console.ReadLine();
 
                     Console.Write("Nhập mô tả nhóm sản phẩm: ");
                     string description = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(description))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mô tả nhóm sản phẩm: Trống.");
-                        description = "Trống";
-                    }
-
-                    string employeeId;
-                    bool exitEmployeeId = false;
-                    do
-                    {
-                        Console.Write("Nhập mã nhân viên phụ trách nhóm sản phẩm này: ");
-                        employeeId = Console.ReadLine();
-
-                        if (string.IsNullOrWhiteSpace(employeeId))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Nhập mã nhân viên phụ trách nhóm sản phẩm này: Trống.");
-                            employeeId = "Trống";
-                            exitEmployeeId = true;
-                        }
-                        else
-                        {
-                            if (repoEmployee.SearchById(employeeId) == null)
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("\u26A0 Mã nhân viên không tồn tại. Vui lòng nhập lại.");
-                            } else
-                            {
-                                exitEmployeeId = true;
-                            }
-                        }
-                    } while (!exitEmployeeId);
+                    Console.Write("Nhập mã nhân viên phụ trách nhóm sản phẩm này: ");
+                    string employeeId = Console.ReadLine();
 
                     repoGroupProduct.Add(new GroupProduct(id, name, description, employeeId));
                 }
+
 
                 //UpdateGroupProduct
                 void UpdateGroupProduct()
@@ -221,80 +187,27 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã nhóm sản phẩm cần cập nhật: ");
                     string id = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(id))
+                    GroupProduct groupProduct = repoGroupProduct.SearchById(id);
+
+                    if (groupProduct != null)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã nhóm sản phẩm cần cập nhật: Trống.");
+                        Console.Write("Nhập tên mới của nhóm sản phẩm: ");
+                        groupProduct.GroupProductName = Console.ReadLine();
+
+                        Console.Write("Nhập mô tả mới của nhóm sản phẩm: ");
+                        groupProduct.GroupProductDescription = Console.ReadLine();
+
+                        Console.Write("Nhập mã nhân viên mới phụ trách nhóm sản phẩm này: ");
+                        groupProduct.EmployeeId = Console.ReadLine();
+
+                        repoGroupProduct.Update(id, groupProduct);
                     }
                     else
                     {
-                        GroupProduct groupProduct = repoGroupProduct.SearchById(id);
-
-                        if (groupProduct != null)
-                        {
-                            Console.Write("Nhập tên mới của nhóm sản phẩm: ");
-                            string name = Console.ReadLine();
-
-                            if (string.IsNullOrWhiteSpace(name))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập tên mới của nhóm sản phẩm: Trống.");
-                            }
-                            else
-                            {
-                                groupProduct.GroupProductName = name;
-                            }
-
-                            Console.Write("Nhập mô tả mới của nhóm sản phẩm: ");
-                            string description = Console.ReadLine();
-
-                            if (string.IsNullOrWhiteSpace(description))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập mô tả mới của nhóm sản phẩm: Trống.");
-                            }
-                            else
-                            {
-                                groupProduct.GroupProductDescription = description;
-                            }
-
-                            string employeeId;
-                            bool exitEmployeeId = false;
-                            do
-                            {
-                                Console.Write("Nhập mã nhân viên mới phụ trách nhóm sản phẩm này: ");
-                                employeeId = Console.ReadLine();
-
-                                if (string.IsNullOrWhiteSpace(employeeId))
-                                {
-                                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                    Console.WriteLine("Nhập mã nhân viên mới phụ trách nhóm sản phẩm này: Trống.");
-                                    employeeId = "Trống";
-                                    exitEmployeeId = true;
-                                }
-                                else
-                                {
-                                    if (repoEmployee.SearchById(employeeId) == null)
-                                    {
-                                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("\u26A0 Mã nhân viên không tồn tại. Vui lòng nhập lại.");
-                                    }
-                                    else
-                                    {
-                                        exitEmployeeId = true;
-                                        groupProduct.EmployeeId = employeeId;
-                                    }
-                                }
-                            } while (!exitEmployeeId);
-
-                            repoGroupProduct.Update(id, groupProduct);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
-                        }
+                        Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
                     }
                 }
+
 
                 //DeleteGroupProduct
                 void DeleteGroupProduct()
@@ -302,15 +215,7 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã nhóm sản phẩm cần xóa: ");
                     string id = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(id))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã nhóm sản phẩm cần xóa: Trống.");
-                    }
-                    else
-                    {
-                        repoGroupProduct.Delete(id);
-                    }
+                    repoGroupProduct.Delete(id);
                 }
 
                 //SearchByIdGroupProduct
@@ -319,27 +224,19 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã nhóm sản phẩm cần tìm: ");
                     string id = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(id))
+                    GroupProduct groupProduct = repoGroupProduct.SearchById(id);
+                    if (groupProduct != null)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã nhóm sản phẩm cần tìm: Trống.");
+                        Console.WriteLine($"+{new string('-', 80)}+");
+                        Console.WriteLine($"|{"",29}{"Kết quả tìm nhóm theo mã",-51}|");
+                        Console.WriteLine($"+{new string('-', 9)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 14)}+");
+                        Console.WriteLine($"| {"Mã nhóm",-7} | {"",9}{"Tên",-11} | {"",13}{"Mô tả",-17} | {"Mã nhân viên",-12} |");
+                        Console.WriteLine($"+{new string('-', 9)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 14)}+");
+                        groupProduct.Display();
                     }
                     else
                     {
-                        GroupProduct groupProduct = repoGroupProduct.SearchById(id);
-                        if (groupProduct != null)
-                        {
-                            Console.WriteLine($"+{new string('-', 80)}+");
-                            Console.WriteLine($"|{"",29}{"Kết quả tìm nhóm theo mã",-51}|");
-                            Console.WriteLine($"+{new string('-', 9)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 14)}+");
-                            Console.WriteLine($"| {"Mã nhóm",-7} | {"",9}{"Tên",-11} | {"",13}{"Mô tả",-17} | {"Mã nhân viên",-12} |");
-                            Console.WriteLine($"+{new string('-', 9)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 14)}+");
-                            groupProduct.Display();
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không tìm nhóm sản phẩm có mã {id}");
-                        }
+                        Console.WriteLine($"\u274C Không tìm nhóm sản phẩm có mã {id}");
                     }
                 }
 
@@ -348,28 +245,20 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.Write("Nhập từ khóa cần tìm: ");
                     string keyWord = Console.ReadLine();
-
-                    if (string.IsNullOrWhiteSpace(keyWord))
+                    
+                    List<GroupProduct> groupProducts = repoGroupProduct.SearchByKeyWord(keyWord);
+                    if (groupProducts.Count != 0)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập từ khóa cần tìm: Trống.");
+                        Console.WriteLine($"+{new string('-', 80)}+");
+                        Console.WriteLine($"|{"",27}{"Kết quả tìm nhóm theo từ khóa",-53}|");
+                        Console.WriteLine($"+{new string('-', 9)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 14)}+");
+                        Console.WriteLine($"| {"Mã nhóm",-7} | {"",9}{"Tên",-11} | {"",13}{"Mô tả",-17} | {"Mã nhân viên",-12} |");
+                        Console.WriteLine($"+{new string('-', 9)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 14)}+");
+                        groupProducts.ForEach(groupProduct => groupProduct.Display());
                     }
                     else
                     {
-                        List<GroupProduct> groupProducts = repoGroupProduct.SearchByKeyWord(keyWord);
-                        if (groupProducts.Count != 0)
-                        {
-                            Console.WriteLine($"+{new string('-', 80)}+");
-                            Console.WriteLine($"|{"",27}{"Kết quả tìm nhóm theo từ khóa",-53}|");
-                            Console.WriteLine($"+{new string('-', 9)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 14)}+");
-                            Console.WriteLine($"| {"Mã nhóm",-7} | {"",9}{"Tên",-11} | {"",13}{"Mô tả",-17} | {"Mã nhân viên",-12} |");
-                            Console.WriteLine($"+{new string('-', 9)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 14)}+");
-                            groupProducts.ForEach(groupProduct => groupProduct.Display());
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không tìm thấy đối tượng có từ khóa: {keyWord}");
-                        }
+                        Console.WriteLine($"\u274C Không tìm thấy đối tượng có từ khóa: {keyWord}");
                     }
                 }
 
@@ -387,7 +276,7 @@ namespace AgriculturalSuppliesStore
                     }
                     else
                     {
-                        Console.WriteLine("Danh sách rỗng.");
+                        Console.WriteLine("\nDanh sách rỗng.");
                     }
                 }
 
@@ -396,34 +285,27 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.Write("Nhập mã nhóm cần xem các sản phẩm: ");
                     string id = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(id))
+                    
+                    if (repoGroupProduct.SearchById(id) != null)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã nhóm cần xem các sản phẩm: Trống.");
-                    }
-                    else
-                    {
-                        if (repoGroupProduct.SearchById(id) != null)
-                        {
-                            List<Fertilizer> fertilizers = repoFertilizer.List.FindAll(item => item.GroupProductId == id.ToUpper());
+                        List<Fertilizer> fertilizers = repoFertilizer.List.FindAll(item => item.GroupProductId == id.ToUpper());
 
-                            if (fertilizers.Count > 0)
-                            {
-                                Console.WriteLine($"+{new string('-', 199)}+");
-                                Console.WriteLine($"|{"",78}{"Danh sách sản phẩm thuộc nhóm có mã " + id,-121}|");
-                                Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
-                                Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"",4}{"Giá",-6} | {"",1}{"Số lượng",-9} | {"",23}{"Mô tả",-27} | {"",4}{"Kiểu đóng gói",-17} | Ngày sản xuất | Ngày hết hạn | {"",1}{"Mã nhóm",-9} | Mã thương hiệu |");
-                                Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
-                                fertilizers.ForEach(fertilizer => fertilizer.Display());
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Nhóm sản phẩm có mã {id} không chứa sản phẩm nào.");
-                            }
-                        } else
+                        if (fertilizers.Count > 0)
                         {
-                            Console.WriteLine($"Nhóm sản phẩm có mã {id} không tồn tại.");
+                            Console.WriteLine($"+{new string('-', 199)}+");
+                            Console.WriteLine($"|{"",78}{"Danh sách sản phẩm thuộc nhóm có mã " + id.ToUpper(),-121}|");
+                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
+                            Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"",4}{"Giá",-6} | {"",1}{"Số lượng",-9} | {"",23}{"Mô tả",-27} | {"",4}{"Kiểu đóng gói",-17} | Ngày sản xuất | Ngày hết hạn | {"",1}{"Mã nhóm",-9} | Mã thương hiệu |");
+                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
+                            fertilizers.ForEach(fertilizer => fertilizer.Display());
                         }
+                        else
+                        {
+                            Console.WriteLine($"Nhóm sản phẩm có mã {id} không chứa sản phẩm nào.");
+                        }
+                    } else
+                    {
+                        Console.WriteLine($"Nhóm sản phẩm có mã {id} không tồn tại.");
                     }
                 }
             }
@@ -434,21 +316,23 @@ namespace AgriculturalSuppliesStore
                 bool exit = false;
                 while (!exit)
                 {
-                    Console.WriteLine($"+{new string('-', 34)}+");
-                    Console.WriteLine($"| {"",3}{"Quản lý danh mục sản phẩm",-29} |");
-                    Console.WriteLine($"+{new string('-', 34)}+");
-                    Console.WriteLine($"| {"",8}{"Menu chức năng",-24} |");
-                    Console.WriteLine($"+{new string('-', 34)}+");
-                    Console.WriteLine($"| {"[1] Xem danh sách sản phẩm",-32} |");
-                    Console.WriteLine($"| {"[2] Thêm sản phẩm",-32} |");
-                    Console.WriteLine($"| {"[3] Cập nhật sản phẩm",-32} |");
-                    Console.WriteLine($"| {"[4] Xóa sản phẩm",-32} |");
-                    Console.WriteLine($"| {"[5] Tìm sản phẩm theo mã",-32} |");
-                    Console.WriteLine($"| {"[6] Tìm sản phẩm theo từ khóa",-32} |");
-                    Console.WriteLine($"| {"[7] Thêm công dụng cho sản phẩm",-32} |");
-                    Console.WriteLine($"| {"[8] Thêm thành phần cho sản phẩm",-32} |");
-                    Console.WriteLine($"| {"[0] Thoát",-32} |");
-                    Console.WriteLine($"+{new string('-', 34)}+");
+                    Console.WriteLine($"+{new string('-', 49)}+");
+                    Console.WriteLine($"| {"",10}{"Quản lý danh mục sản phẩm",-37} |");
+                    Console.WriteLine($"+{new string('-', 49)}+");
+                    Console.WriteLine($"| {"",15}{"Menu chức năng",-32} |");
+                    Console.WriteLine($"+{new string('-', 49)}+");
+                    Console.WriteLine($"| {"[1] Xem danh sách sản phẩm",-47} |");
+                    Console.WriteLine($"| {"[2] Thêm sản phẩm",-47} |");
+                    Console.WriteLine($"| {"[3] Cập nhật sản phẩm",-47} |");
+                    Console.WriteLine($"| {"[4] Xóa sản phẩm",-47} |");
+                    Console.WriteLine($"| {"[5] Tìm sản phẩm theo mã",-47} |");
+                    Console.WriteLine($"| {"[6] Tìm sản phẩm theo từ khóa",-47} |");
+                    Console.WriteLine($"| {"[7] Thêm công dụng cho sản phẩm",-47} |");
+                    Console.WriteLine($"| {"[8] Thêm thành phần cho sản phẩm",-47} |");
+                    Console.WriteLine($"| {"[9] Xem danh sách thành phần trong một sản phẩm",-47} |");
+                    Console.WriteLine($"| {"[10] Xem danh sách công dụng của một sản phẩm",-47} |");
+                    Console.WriteLine($"| {"[0] Thoát",-47} |");
+                    Console.WriteLine($"+{new string('-', 49)}+");
                     Console.Write("Vui lòng nhập số tương ứng với một trong các tùy chọn trên: ");
                     string input = Console.ReadLine();
                     switch (input)
@@ -477,6 +361,12 @@ namespace AgriculturalSuppliesStore
                         case "8":
                             AddProductComponent();
                             break;
+                        case "9":
+                            DisplayComponentInProduct();
+                            break;
+                        case "10":
+                            DisplayUseOfProduct();
+                            break;
                         case "0":
                             exit = true;
                             break;
@@ -485,513 +375,111 @@ namespace AgriculturalSuppliesStore
                             break;
                     }
                 }
-            }
+                //AddFertilizer
+                void AddFertilizer()
+                {
+                    string id = repoFertilizer.List.Count == 0 ? "P00001" : "P" + (int.Parse(repoFertilizer.List[repoFertilizer.List.Count - 1].Id.Substring(1)) + 1).ToString().PadLeft(5, '0');
 
-            //AddFertilizer
-            void AddFertilizer()
-            {
-                string id;
-                if (repoGroupProduct.List.Count == 0)
-                {
-                    id = "P00001";
-                }
-                else
-                {
-                    string lastId = repoGroupProduct.List[repoGroupProduct.List.Count - 1].Id;
-                    int idToNum = int.Parse(lastId.Substring(2)) + 1;
-                    id = "P" + idToNum.ToString().PadLeft(5, '0');
-                }
-
-                string name;
-                do
-                {
                     Console.Write("Nhập tên sản phẩm: ");
-                    name = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(name))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Tên sản phẩm không thể để trống. Vui lòng nhập lại.");
-                    }
-                } while (string.IsNullOrWhiteSpace(name));
+                    string name = Console.ReadLine();
 
-                float price = 0;
-                string priceString;
-                bool exitPrice = false;
-                do
-                {
                     Console.Write("Nhập giá sản phẩm: ");
-                    priceString = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(priceString))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Giá sản phẩm không thể để trống. Vui lòng nhập lại.");
-                    } else
-                    {
-                        if(!float.TryParse(priceString, out price))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Giá sản phẩm không hợp lệ. Vui lòng nhập lại.");
-                        } else
-                        {
-                            exitPrice = true;
-                        }
-                    }
-                } while (!exitPrice);
+                    float price = float.Parse(Console.ReadLine());
 
-                int quantity = 0;
-                string quantityString;
-                bool exitQuantity = false;
-                do
-                {
                     Console.Write("Nhập số lượng sản phẩm: ");
-                    quantityString = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(quantityString))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Số lượng sản phẩm không thể để trống. Vui lòng nhập lại.");
-                    }
-                    else
-                    {
-                        if (!int.TryParse(quantityString, out quantity))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Số lượng sản phẩm không hợp lệ. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            exitQuantity = true;
-                        }
-                    }
-                } while (!exitQuantity);
+                    int quantity = int.Parse(Console.ReadLine());
 
-                Console.Write("Nhập mô tả sản phẩm: ");
-                string description = Console.ReadLine();
+                    Console.Write("Nhập mô tả sản phẩm: ");
+                    string description = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(description))
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                    Console.WriteLine("Nhập mô tả sản phẩm: Trống.");
-                    description = "Trống";
-                }
-
-                string packagingType;
-                do
-                {
                     Console.Write("Nhập kiểu đóng gói sản phẩm: ");
-                    packagingType = Console.ReadLine();
-                    if (string.IsNullOrWhiteSpace(packagingType))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Kiểu đóng gói sản phẩm không thể để trống. Vui lòng nhập lại.");
-                    }
-                } while (string.IsNullOrWhiteSpace(packagingType));
+                    string packagingType = Console.ReadLine();
 
-                DateTime manufacturingDate = DateTime.Now;
-                string manufacturingDateString;
-                bool exitManufacturingDate = false;
-                do
-                {
                     Console.Write("Nhập ngày sản xuất của sản phẩm: ");
-                    manufacturingDateString = Console.ReadLine();
+                    DateTime manufacturingDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
 
-                    if (string.IsNullOrWhiteSpace(manufacturingDateString))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Ngày sản xuất không thể để trống. Vui lòng nhập lại.");
-                    }
-                    else
-                    {
-                        if (!DateTime.TryParseExact(manufacturingDateString, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out manufacturingDate))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Ngày sản xuất không đúng định dạng. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            if (manufacturingDate > DateTime.Now)
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("\u26A0 Ngày sản xuất phải bằng hoặc trước ngày hiện tại. Vui lòng nhập lại.");
-                            } else
-                            {
-                                exitManufacturingDate = true;
-                            }
-                        }
-                    }
-                } while (!exitManufacturingDate);
-
-                DateTime expiryDate = DateTime.Now;
-                string expiryDateString;
-                bool exitExpiryDate = false;
-                do
-                {
                     Console.Write("Nhập ngày hết hạn của sản phẩm: ");
-                    expiryDateString = Console.ReadLine();
+                    DateTime expiryDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
 
-                    if (string.IsNullOrWhiteSpace(expiryDateString))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Ngày hết hạn không thể để trống. Vui lòng nhập lại.");
-                    }
-                    else
-                    {
-                        if (!DateTime.TryParseExact(expiryDateString, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out expiryDate))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Ngày hết hạn không đúng định dạng. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            if (expiryDate <= manufacturingDate)
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("\u26A0 Ngày hết hạn phải sau ngày sản xuất. Vui lòng nhập lại.");
-                            }
-                            else
-                            {
-                                exitExpiryDate = true;
-                            }
-                        }
-                    }
-                } while (!exitExpiryDate);
-
-                string brandId;
-                bool exitBrandId = false;
-                do
-                {
                     Console.Write("Nhập mã thương hiệu của sản phẩm: ");
-                    brandId = Console.ReadLine();
+                    string brandId = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(brandId))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Mã thương hiệu không thể để trống. Vui lòng nhập lại.");
-                    }
-                    else
-                    {
-                        if (repoBrand.SearchById(brandId) == null)
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Mã thương hiệu không tồn tại. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            exitBrandId = true;
-                        }
-                    }
-                } while (!exitBrandId);
-
-                string groupProductId;
-                bool exitGroupProductId = false;
-                do
-                {
                     Console.Write("Nhập mã nhóm của sản phẩm: ");
-                    groupProductId = Console.ReadLine();
+                    string groupProductId = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(groupProductId))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Mã nhóm không thể để trống. Vui lòng nhập lại.");
-                    }
-                    else
-                    {
-                        if (repoGroupProduct.SearchById(groupProductId) == null)
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Mã nhóm không tồn tại. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            exitGroupProductId = true;
-                        }
-                    }
-                } while (!exitGroupProductId);
-
-                repoFertilizer.Add(new Fertilizer(id, name, price, quantity, description, packagingType, manufacturingDate, expiryDate, brandId, groupProductId));
-            }
-
-            //UpdateFertilizer
-            void UpdateFertilizer()
-            {
-                Console.Write("Nhập mã sản phẩm cần cập nhật: ");
-                string id = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(id))
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                    Console.WriteLine("Nhập mã sản phẩm cần cập nhật: Trống.");
+                    repoFertilizer.Add(new Fertilizer(id, name, price, quantity, description, packagingType, manufacturingDate, expiryDate, brandId, groupProductId));
                 }
-                else
+
+
+                //UpdateFertilizer
+                void UpdateFertilizer()
                 {
+                    Console.Write("Nhập mã sản phẩm cần cập nhật: ");
+                    string id = Console.ReadLine();
+
                     Fertilizer fertilizer = repoFertilizer.SearchById(id);
 
                     if (fertilizer != null)
                     {
                         Console.Write("Nhập tên mới cho sản phẩm: ");
                         string name = Console.ReadLine();
-                        if (string.IsNullOrWhiteSpace(name))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Nhập tên mới cho sản phẩm: Trống.");
-                        }
-                        else
-                        {
-                            fertilizer.ProductName = name;
-                        }
+                        fertilizer.ProductName = name;
 
-                        float price = 0;
-                        string priceString;
-                        bool exitPrice = false;
-                        do
-                        {
-                            Console.Write("Nhập giá mới cho sản phẩm: ");
-                            priceString = Console.ReadLine();
-                            if (string.IsNullOrWhiteSpace(priceString))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập giá mới cho sản phẩm: Trống.");
-                                exitPrice = true;
-                            }
-                            else
-                            {
-                                if (!float.TryParse(priceString, out price))
-                                {
-                                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                    Console.WriteLine("\u26A0 Giá sản phẩm không hợp lệ. Vui lòng nhập lại.");
-                                }
-                                else
-                                {
-                                    fertilizer.ProductPrice = price;
-                                    exitPrice = true;
-                                }
-                            }
-                        } while (!exitPrice);
+                        Console.Write("Nhập giá mới cho sản phẩm: ");
+                        float price = float.Parse(Console.ReadLine());
+                        fertilizer.ProductPrice = price;
 
-                        int quantity = 0;
-                        string quantityString;
-                        bool exitQuantity = false;
-                        do
-                        {
-                            Console.Write("Nhập số lượng mới cho sản phẩm: ");
-                            quantityString = Console.ReadLine();
-                            if (string.IsNullOrWhiteSpace(quantityString))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập số lượng mới cho sản phẩm: Trống.");
-                                exitQuantity = true;
-                            }
-                            else
-                            {
-                                if (!int.TryParse(quantityString, out quantity))
-                                {
-                                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                    Console.WriteLine("\u26A0 Số lượng sản phẩm không hợp lệ. Vui lòng nhập lại.");
-                                }
-                                else
-                                {
-                                    fertilizer.ProductQuantity = quantity;
-                                    exitQuantity = true;
-                                }
-                            }
-                        } while (!exitQuantity);
+                        Console.Write("Nhập số lượng mới cho sản phẩm: ");
+                        int quantity = int.Parse(Console.ReadLine());
+                        fertilizer.ProductQuantity = quantity;
 
                         Console.Write("Nhập mô tả mới cho sản phẩm: ");
                         string description = Console.ReadLine();
+                        fertilizer.ProductDescription = description;
 
-                        if (string.IsNullOrWhiteSpace(description))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Nhập mô tả mới cho sản phẩm: Trống.");
-                        }
-                        else
-                        {
-                            fertilizer.ProductDescription = description;
-                        }
+                        Console.Write("Nhập kiểu đóng gói mới cho sản phẩm: ");
+                        string packagingType = Console.ReadLine();
+                        fertilizer.FertilizerPackagingType = packagingType;
 
-                        string packagingType;
-                        do
-                        {
-                            Console.Write("Nhập kiểu đóng gói mới cho sản phẩm: ");
-                            packagingType = Console.ReadLine();
-                            if (string.IsNullOrWhiteSpace(packagingType))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập kiểu đóng gói mới cho sản phẩm: Trống.");
-                            }
-                            else
-                            {
-                                fertilizer.FertilizerPackagingType = packagingType;
-                            }
-                        } while (string.IsNullOrWhiteSpace(packagingType));
+                        Console.Write("Nhập ngày sản xuất mới cho sản phẩm (dd/MM/yyyy): ");
+                        DateTime manufacturingDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+                        fertilizer.FertilizerManufacturingDate = manufacturingDate;
 
-                        DateTime manufacturingDate = DateTime.Now;
-                        string manufacturingDateString;
-                        bool exitManufacturingDate = false;
-                        do
-                        {
-                            Console.Write("Nhập ngày sản xuất mới cho sản phẩm: ");
-                            manufacturingDateString = Console.ReadLine();
+                        Console.Write("Nhập ngày hết hạn mới cho sản phẩm (dd/MM/yyyy): ");
+                        DateTime expiryDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+                        fertilizer.FertilizerExpiryDate = expiryDate;
 
-                            if (string.IsNullOrWhiteSpace(manufacturingDateString))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập ngày sản xuất mới cho sản phẩm: Trống.");
-                                exitManufacturingDate = true;
-                            }
-                            else
-                            {
-                                if (!DateTime.TryParseExact(manufacturingDateString, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out manufacturingDate))
-                                {
-                                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                    Console.WriteLine("\u26A0 Ngày sản xuất không đúng định dạng. Vui lòng nhập lại.");
-                                }
-                                else
-                                {
-                                    if (manufacturingDate > DateTime.Now)
-                                    {
-                                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("\u26A0 Ngày sản xuất phải bằng hoặc trước ngày hiện tại. Vui lòng nhập lại.");
-                                    }
-                                    else
-                                    {
-                                        fertilizer.FertilizerManufacturingDate = manufacturingDate;
-                                        exitManufacturingDate = true;
-                                    }
-                                }
-                            }
-                        } while (!exitManufacturingDate);
+                        Console.Write("Nhập mã thương hiệu mới cho sản phẩm: ");
+                        string brandId = Console.ReadLine();
+                        fertilizer.BrandId = brandId;
 
-                        DateTime expiryDate = DateTime.Now;
-                        string expiryDateString;
-                        bool exitExpiryDate = false;
-                        do
-                        {
-                            Console.Write("Nhập ngày hết hạn mới cho sản phẩm: ");
-                            expiryDateString = Console.ReadLine();
-
-                            if (string.IsNullOrWhiteSpace(expiryDateString))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập ngày hết hạn mới cho sản phẩm: Trống.");
-                                exitExpiryDate = true;
-                            }
-                            else
-                            {
-                                if (!DateTime.TryParseExact(expiryDateString, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out expiryDate))
-                                {
-                                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                    Console.WriteLine("\u26A0 Ngày hết hạn không đúng định dạng. Vui lòng nhập lại.");
-                                }
-                                else
-                                {
-                                    if (expiryDate <= manufacturingDate)
-                                    {
-                                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("\u26A0 Ngày hết hạn phải sau ngày sản xuất. Vui lòng nhập lại.");
-                                    }
-                                    else
-                                    {
-                                        fertilizer.FertilizerExpiryDate = expiryDate;
-                                        exitExpiryDate = true;
-                                    }
-                                }
-                            }
-                        } while (!exitExpiryDate);
-
-                        string brandId;
-                        bool exitBrandId = false;
-                        do
-                        {
-                            Console.Write("Nhập mã thương hiệu mới cho sản phẩm: ");
-                            brandId = Console.ReadLine();
-
-                            if (string.IsNullOrWhiteSpace(brandId))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập mã thương hiệu mới cho sản phẩm: Trống.");
-                                exitBrandId = true;
-                            }
-                            else
-                            {
-                                if (repoBrand.SearchById(brandId) == null)
-                                {
-                                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                    Console.WriteLine("\u26A0 Mã thương hiệu không tồn tại. Vui lòng nhập lại.");
-                                }
-                                else
-                                {
-                                    fertilizer.BrandId = brandId;
-                                    exitBrandId = true;
-                                }
-                            }
-                        } while (!exitBrandId);
-
-                        string groupProductId;
-                        bool exitGroupProductId = false;
-                        do
-                        {
-                            Console.Write("Nhập mã nhóm mới cho sản phẩm: ");
-                            groupProductId = Console.ReadLine();
-
-                            if (string.IsNullOrWhiteSpace(groupProductId))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập mã nhóm mới cho sản phẩm: Trống.");
-                                exitGroupProductId = true;
-                            }
-                            else
-                            {
-                                if (repoGroupProduct.SearchById(groupProductId) == null)
-                                {
-                                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                    Console.WriteLine("\u26A0 Mã nhóm không tồn tại. Vui lòng nhập lại.");
-                                }
-                                else
-                                {
-                                    fertilizer.GroupProductId = groupProductId;
-                                    exitGroupProductId = true;
-                                }
-                            }
-                        } while (!exitGroupProductId);
+                        Console.Write("Nhập mã nhóm mới cho sản phẩm: ");
+                        string groupProductId = Console.ReadLine();
+                        fertilizer.GroupProductId = groupProductId;
 
                         repoFertilizer.Update(id, fertilizer);
-                    } else
+                    }
+                    else
                     {
-                        Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
+                        Console.WriteLine($"Không thể cập nhật. Không tồn tại mã sản phẩm: {id}.");
                     }
                 }
-            }
 
-            //DeleteFertilizer
-            void DeleteFertilizer()
-            {
-                Console.Write("Nhập mã sản phẩm cần xóa: ");
-                string id = Console.ReadLine();
+                //DeleteFertilizer
+                void DeleteFertilizer()
+                {
+                    Console.Write("Nhập mã sản phẩm cần xóa: ");
+                    string id = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(id))
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                    Console.WriteLine("Nhập mã sản phẩm cần xóa: Trống.");
-                }
-                else
-                {
                     repoFertilizer.Delete(id);
                 }
-            }
 
-            //SearchByIdFertilizer
-            void SearchByIdFertilizer()
-            {
-                Console.Write("Nhập mã sản phẩm cần tìm: ");
-                string id = Console.ReadLine();
+                //SearchByIdFertilizer
+                void SearchByIdFertilizer()
+                {
+                    Console.Write("Nhập mã sản phẩm cần tìm: ");
+                    string id = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(id))
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                    Console.WriteLine("Nhập mã sản phẩm cần tìm: Trống.");
-                }
-                else
-                {
                     Fertilizer fertilizer = repoFertilizer.SearchById(id);
                     if (fertilizer != null)
                     {
@@ -1007,21 +495,13 @@ namespace AgriculturalSuppliesStore
                         Console.WriteLine($"\u274C Không tìm thấy mã sản phẩm: {id}");
                     }
                 }
-            }
 
-            //SearchByKeyWordFertilizer
-            void SearchByKeyWordFertilizer()
-            {
-                Console.Write("Nhập từ khóa cần tìm: ");
-                string keyWord = Console.ReadLine();
+                //SearchByKeyWordFertilizer
+                void SearchByKeyWordFertilizer()
+                {
+                    Console.Write("Nhập từ khóa cần tìm: ");
+                    string keyWord = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(keyWord))
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                    Console.WriteLine("Nhập từ khóa cần tìm: Trống.");
-                }
-                else
-                {
                     List<Fertilizer> fertilizers = repoFertilizer.SearchByKeyWord(keyWord);
                     if (fertilizers.Count != 0)
                     {
@@ -1037,163 +517,110 @@ namespace AgriculturalSuppliesStore
                         Console.WriteLine($"\u274C Không tìm thấy từ khóa: {keyWord}");
                     }
                 }
-            }
 
-            //AddProductComponent
-            void AddProductComponent() 
-            {
-                string id;
-                if (repoGroupProduct.List.Count == 0)
+                //AddProductComponent
+                void AddProductComponent()
                 {
-                    id = "PC00001";
-                }
-                else
-                {
-                    string lastId = repoGroupProduct.List[repoGroupProduct.List.Count - 1].Id;
-                    int idToNum = int.Parse(lastId.Substring(2)) + 1;
-                    id = "PC" + idToNum.ToString().PadLeft(5, '0');
-                }
+                    string id = repoProductComponent.List.Count == 0 ? "PC00001" : "PC" + (int.Parse(repoProductComponent.List[repoProductComponent.List.Count - 1].Id.Substring(2)) + 1).ToString().PadLeft(5, '0');
 
-                string productId;
-                bool exitProductId = false;
-                do
-                {
                     Console.Write("Nhập mã sản phẩm: ");
-                    productId = Console.ReadLine();
+                    string productId = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(productId))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Mã sản phẩm không thể để trống. Vui lòng nhập lại.");
-                    }
-                    else
-                    {
-                        if (repoFertilizer.SearchById(productId) == null)
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Mã sản phẩm không tồn tại. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            exitProductId = true;
-                        }
-                    }
-                } while (!exitProductId);
-
-                string componentId;
-                bool exitComponentId = false;
-                do
-                {
                     Console.Write("Nhập mã thành phần: ");
-                    componentId = Console.ReadLine();
+                    string componentId = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(componentId))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Mã thành phần không thể để trống. Vui lòng nhập lại.");
-                    }
-                    else
-                    {
-                        if (repoComponent.SearchById(componentId) == null)
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Mã thành phần không tồn tại. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            exitComponentId = true;
-                        }
-                    }
-                } while (!exitComponentId);
-
-                repoProductComponent.Add(new ProductComponent(id, productId, componentId));
-            }
-
-            //AddProductUse
-            void AddProductUse()
-            {
-                string id;
-                if (repoGroupProduct.List.Count == 0)
-                {
-                    id = "PU00001";
-                }
-                else
-                {
-                    string lastId = repoGroupProduct.List[repoGroupProduct.List.Count - 1].Id;
-                    int idToNum = int.Parse(lastId.Substring(2)) + 1;
-                    id = "PU" + idToNum.ToString().PadLeft(5, '0');
+                    repoProductComponent.Add(new ProductComponent(id, productId.ToUpper(), componentId.ToUpper()));
                 }
 
-                string productId;
-                bool exitProductId = false;
-                do
+
+                //AddProductUse
+                void AddProductUse()
                 {
+                    string id = repoProductUse.List.Count == 0 ? "PU00001" : "PU" + (int.Parse(repoProductUse.List[repoProductUse.List.Count - 1].Id.Substring(2)) + 1).ToString().PadLeft(5, '0');
+
                     Console.Write("Nhập mã sản phẩm: ");
-                    productId = Console.ReadLine();
+                    string productId = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(productId))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Mã sản phẩm không thể để trống. Vui lòng nhập lại.");
-                    }
-                    else
-                    {
-                        if (repoFertilizer.SearchById(productId) == null)
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Mã sản phẩm không tồn tại. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            exitProductId = true;
-                        }
-                    }
-                } while (!exitProductId);
-
-                string useId;
-                bool exitUseId = false;
-                do
-                {
                     Console.Write("Nhập mã công dụng: ");
-                    useId = Console.ReadLine();
+                    string useId = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(useId))
+                    repoProductUse.Add(new ProductUse(id, productId.ToUpper(), useId.ToUpper()));
+                }
+
+                //DisplayAllFertilizer
+                void DisplayAllFertilizer()
+                {
+                    if (repoFertilizer.List.Count != 0)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("\u26A0 Mã công dụng không thể để trống. Vui lòng nhập lại.");
+                        Console.WriteLine($"+{new string('-', 199)}+");
+                        Console.WriteLine($"|{"",90}{"Danh sách sản phẩm",-109}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
+                        Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"",4}{"Giá",-6} | {"",1}{"Số lượng",-9} | {"",23}{"Mô tả",-27} | {"",4}{"Kiểu đóng gói",-17} | Ngày sản xuất | Ngày hết hạn | {"",1}{"Mã nhóm",-9} | Mã thương hiệu |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
+                        repoFertilizer.DisplayAll();
                     }
                     else
                     {
-                        if (repoUse.SearchById(useId) == null)
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Mã công dụng không tồn tại. Vui lòng nhập lại.");
-                        }
-                        else
-                        {
-                            exitUseId = true;
-                        }
+                        Console.WriteLine("\nDanh sách rỗng.");
                     }
-                } while (!exitUseId);
-
-                repoProductUse.Add(new ProductUse(id, productId, useId));
-            }
-
-            //DisplayAllFertilizer
-            void DisplayAllFertilizer()
-            {
-                if (repoFertilizer.List.Count != 0)
-                {
-                    Console.WriteLine($"+{new string('-', 199)}+");
-                    Console.WriteLine($"|{"",90}{"Danh sách sản phẩm",-109}|");
-                    Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
-                    Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"",4}{"Giá",-6} | {"",1}{"Số lượng",-9} | {"",23}{"Mô tả",-27} | {"",4}{"Kiểu đóng gói",-17} | Ngày sản xuất | Ngày hết hạn | {"",1}{"Mã nhóm",-9} | Mã thương hiệu |");
-                    Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
-                    repoFertilizer.DisplayAll();
                 }
-                else
+
+                // DisplayComponentInProduct
+                void DisplayComponentInProduct() 
                 {
-                    Console.WriteLine("Danh sách rỗng.");
+                    Console.Write("Nhập mã sản phẩm cần xem thành phần: ");
+                    string id = Console.ReadLine();
+
+                    List<Component> components = repoProductComponent.List
+                    .Where(pc => pc.ProductId == id.ToUpper()) 
+                    .Join(repoComponent.List, 
+                        pc => pc.ComponentId,
+                        c => c.Id, 
+                        (pc, c) => c)
+                    .ToList();
+
+                    if (components.Count != 0)
+                    {
+                        Console.WriteLine($"+{new string('-', 101)}+");
+                        Console.WriteLine($"|{"",25}{"Danh sách thành phần trong sản phẩm có mã " + id.ToUpper(),-76}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
+                        Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",0}{"Tỉ lệ (%)",-10} | {"",20}{"Mô tả",-30} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
+                        components.ForEach(component => component.Display());
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sản phẩm chưa có thành phần nào.");
+                    }
+                }
+
+                // DisplayUseOfProduct
+                void DisplayUseOfProduct() 
+                {
+                    Console.Write("Nhập mã sản phẩm cần xem thành phần: ");
+                    string id = Console.ReadLine();
+
+                    List<Use> uses = repoProductUse.List
+                    .Where(pc => pc.ProductId == id.ToUpper()) 
+                    .Join(repoUse.List, 
+                        pc => pc.UseId,
+                        c => c.Id, 
+                        (pc, c) => c)
+                    .ToList();
+
+                    if (uses.Count != 0)
+                    {
+                        Console.WriteLine($"+{new string('-', 88)}+");
+                        Console.WriteLine($"|{"",22}{"Danh sách công dụng của sản phẩm có mã " + id.ToUpper(),-66}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
+                        Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",20}{"Mô tả",-30} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
+                        uses.ForEach(use => use.Display());
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sản phẩm chưa có công dụng nào.");
+                    }
                 }
             }
 
@@ -1250,61 +677,16 @@ namespace AgriculturalSuppliesStore
                 //AddComponent
                 void AddComponent()
                 {
-                    string id;
-                    if (repoComponent.List.Count == 0)
-                    {
-                        id = "C00001";
-                    }
-                    else
-                    {
-                        string lastId = repoGroupProduct.List[repoGroupProduct.List.Count - 1].Id;
-                        int idToNum = int.Parse(lastId.Substring(2)) + 1;
-                        id = "C" + idToNum.ToString().PadLeft(5, '0');
-                    }
+                    string id = repoComponent.List.Count == 0 ? "C00001" : "C" + (int.Parse(repoComponent.List[repoComponent.List.Count - 1].Id.Substring(2)) + 1).ToString().PadLeft(5, '0');
 
-                    string name;
-                    do
-                    {
-                        Console.Write("Nhập tên thành phần: ");
-                        name = Console.ReadLine();
-                        if (string.IsNullOrWhiteSpace(name))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Tên thành phần không thể để trống. Vui lòng nhập lại.");
-                        }
-                    } while (string.IsNullOrWhiteSpace(name));
+                    Console.Write("Nhập tên thành phần: ");
+                    string name = Console.ReadLine();
 
-                    float percentage = 0;
-                    string percentageString;
-                    bool exitPercentage = false;
-                    do
-                    {
-                        Console.Write("Nhập tỉ lệ thành phần (%): ");
-                        percentageString = Console.ReadLine();
-                        if (string.IsNullOrWhiteSpace(percentageString))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Tỉ lệ thành phần không thể để trống. Vui lòng nhập lại.");
-                        } else
-                        {
-                            if (!float.TryParse(percentageString, out percentage) || percentage > 100) 
-                            {
-                                Console.WriteLine("\u26A0 Tỉ lệ thành phần không hợp lệ. Vui lòng nhập lại.");
-                            } else {
-                                exitPercentage = true;
-                            }
-                        }
-                    } while (!exitPercentage);
+                    Console.Write("Nhập tỉ lệ thành phần (%): ");
+                    float percentage = float.Parse(Console.ReadLine());
 
                     Console.Write("Nhập mô tả thành phần: ");
                     string description = Console.ReadLine();
-
-                    if (string.IsNullOrWhiteSpace(description))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mô tả thành phần: Trống.");
-                        description = "Trống";
-                    }
 
                     repoComponent.Add(new Component(id, name, percentage, description));
                 }
@@ -1315,67 +697,24 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã thành phần cần cập nhật: ");
                     string id = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(id))
+                    Component component = repoComponent.SearchById(id);
+
+                    if (component != null)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã thành phần cần cập nhật: Trống.");
+                        Console.Write("Nhập tên mới cho thành phần: ");
+                        component.ComponentName = Console.ReadLine();
+
+                        Console.Write("Nhập tỉ lệ mới cho thành phần (%): ");
+                        component.ComponentPercentage = float.Parse(Console.ReadLine());
+
+                        Console.Write("Nhập mô tả thành phần: ");
+                        component.ComponentDescription = Console.ReadLine();
+
+                        repoComponent.Update(id, component);
                     }
                     else
                     {
-                        Component component = repoComponent.SearchById(id);
-
-                        if (component != null)
-                        {
-                            Console.Write("Nhập tên mới cho thành phần: ");
-                            string name = Console.ReadLine();
-                            if (string.IsNullOrWhiteSpace(name))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập tên mới cho thành phần: Trống");
-                            } else {
-                                component.ComponentName = name;
-                            }
-
-                            float percentage = 0;
-                            string percentageString;
-                            bool exitPercentage = false;
-                            do
-                            {
-                                Console.Write("Nhập tỉ lệ mới cho thành phần (%): ");
-                                percentageString = Console.ReadLine();
-                                if (string.IsNullOrWhiteSpace(percentageString))
-                                {
-                                    Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                    Console.WriteLine("Nhập tỉ lệ mới cho thành phần (%): Trống.");
-                                    exitPercentage = true;
-                                } else
-                                {
-                                    if (!float.TryParse(percentageString, out percentage) || percentage > 100) 
-                                    {
-                                        Console.WriteLine("\u26A0 Tỉ lệ thành phần không hợp lệ. Vui lòng nhập lại.");
-                                    } else 
-                                    {
-                                        component.ComponentPercentage = percentage;
-                                        exitPercentage = true;
-                                    }
-                                }
-                            } while (!exitPercentage);
-
-                            Console.Write("Nhập mô tả thành phần: ");
-                            string description = Console.ReadLine();
-
-                            if (string.IsNullOrWhiteSpace(description))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập mô tả thành phần: Trống.");
-                            }
-
-                            repoComponent.Update(id, component);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
-                        }
+                        Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
                     }
                 }
 
@@ -1384,16 +723,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.Write("Nhập mã thành phần cần xóa: ");
                     string id = Console.ReadLine();
-
-                    if (string.IsNullOrWhiteSpace(id))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã thành phần cần xóa: Trống.");
-                    }
-                    else
-                    {
-                        repoComponent.Delete(id);
-                    }
+                    
+                    repoComponent.Delete(id);
                 }
 
                 //SearchByIdComponent
@@ -1402,28 +733,20 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã thành phần cần tìm: ");
                     string id = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(id))
+                    Component component = repoComponent.SearchById(id);
+                    if (component != null)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã thành phần cần tìm: Trống.");
+                            
+                        Console.WriteLine($"+{new string('-', 101)}+");
+                        Console.WriteLine($"|{"",36}{"Kết quả tìm thành phần theo mã",-65}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
+                        Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",0}{"Tỉ lệ (%)",-10} | {"",20}{"Mô tả",-30} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
+                        component.Display();
                     }
                     else
                     {
-                        Component component = repoComponent.SearchById(id);
-                        if (component != null)
-                        {
-                            
-                            Console.WriteLine($"+{new string('-', 101)}+");
-                            Console.WriteLine($"|{"",36}{"Kết quả tìm thành phần theo mã",-65}|");
-                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
-                            Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",0}{"Tỉ lệ (%)",-10} | {"",20}{"Mô tả",-30} |");
-                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
-                            component.Display();
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không tìm thấy mã thành phần: {id}");
-                        }
+                        Console.WriteLine($"\u274C Không tìm thấy mã thành phần: {id}");
                     }
                 }
 
@@ -1433,27 +756,19 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập từ khóa cần tìm: ");
                     string keyWord = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(keyWord))
+                    List<Component> components = repoComponent.SearchByKeyWord(keyWord);
+                    if (components.Count != 0)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập từ khóa cần tìm: Trống.");
+                        Console.WriteLine($"+{new string('-', 101)}+");
+                        Console.WriteLine($"|{"",35}{"Kết quả tìm thành phần theo từ khóa",-66}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
+                        Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",0}{"Tỉ lệ (%)",-10} | {"",20}{"Mô tả",-30} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
+                        components.ForEach(component => component.Display());
                     }
                     else
                     {
-                        List<Component> components = repoComponent.SearchByKeyWord(keyWord);
-                        if (components.Count != 0)
-                        {
-                            Console.WriteLine($"+{new string('-', 101)}+");
-                            Console.WriteLine($"|{"",35}{"Kết quả tìm thành phần theo từ khóa",-66}|");
-                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
-                            Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",0}{"Tỉ lệ (%)",-10} | {"",20}{"Mô tả",-30} |");
-                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 52)}+");
-                            components.ForEach(component => component.Display());
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không tìm thấy từ khóa: {keyWord}");
-                        }
+                        Console.WriteLine($"\u274C Không tìm thấy từ khóa: {keyWord}");
                     }
                 }
 
@@ -1470,7 +785,7 @@ namespace AgriculturalSuppliesStore
                         repoComponent.DisplayAll();
                     } else
                     {
-                        Console.WriteLine("Danh sách rỗng.");
+                        Console.WriteLine("\nDanh sách rỗng.");
                     }
                 }
             }
@@ -1528,39 +843,13 @@ namespace AgriculturalSuppliesStore
                 //AddUse
                 void AddUse()
                 {
-                    string id;
-                    if (repoUse.List.Count == 0)
-                    {
-                        id = "U00001";
-                    }
-                    else
-                    {
-                        string lastId = repoGroupProduct.List[repoGroupProduct.List.Count - 1].Id;
-                        int idToNum = int.Parse(lastId.Substring(2)) + 1;
-                        id = "U" + idToNum.ToString().PadLeft(5, '0');
-                    }
+                    string id = repoUse.List.Count == 0 ? "U00001" : "U" + (int.Parse(repoUse.List[repoUse.List.Count - 1].Id.Substring(2)) + 1).ToString().PadLeft(5, '0');
 
-                    string name;
-                    do
-                    {
-                        Console.Write("Nhập tên công dụng: ");
-                        name = Console.ReadLine();
-                        if (string.IsNullOrWhiteSpace(name))
-                        {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("\u26A0 Tên công dụng không thể để trống. Vui lòng nhập lại.");
-                        }
-                    } while (string.IsNullOrWhiteSpace(name));
+                    Console.Write("Nhập tên công dụng: ");
+                    string name = Console.ReadLine();
 
                     Console.Write("Nhập mô tả công dụng: ");
                     string description = Console.ReadLine();
-
-                    if (string.IsNullOrWhiteSpace(description))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mô tả công dụng: Trống.");
-                        description = "Trống";
-                    }
 
                     repoUse.Add(new Use(id, name, description));
                 }
@@ -1571,47 +860,21 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã công dụng cần cập nhật: ");
                     string id = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(id))
+                    Use use = repoUse.SearchById(id);
+
+                    if (use != null)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã công dụng cần cập nhật: Trống.");
+                        Console.Write("Nhập tên mới cho công dụng: ");
+                        use.UseName = Console.ReadLine();
+
+                        Console.Write("Nhập mô tả mới cho công dụng: ");
+                        use.UseDescription = Console.ReadLine();
+
+                        repoUse.Update(id, use);
                     }
                     else
                     {
-                        Use use = repoUse.SearchById(id);
-
-                        if (use != null)
-                        {
-                            Console.Write("Nhập tên mới cho công dụng: ");
-                            string name = Console.ReadLine();
-                            if (string.IsNullOrWhiteSpace(name))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập tên mới cho công dụng: Trống");
-                            }
-                            else
-                            {
-                                use.UseName = name;
-                            }
-
-                            Console.Write("Nhập mô tả mới cho công dụng: ");
-                            string description = Console.ReadLine();
-                            if (string.IsNullOrWhiteSpace(description))
-                            {
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.WriteLine("Nhập mô tả mới cho công dụng: Trống");
-                            }
-                            else
-                            {
-                                use.UseDescription = description;
-                            }
-
-                            repoUse.Update(id, use);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
-                        }
+                        Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
                     }
                 }
 
@@ -1621,15 +884,7 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã công dụng cần xóa: ");
                     string id = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(id))
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã công dụng cần xóa: Trống.");
-                    }
-                    else
-                    {
-                        repoUse.Delete(id);
-                    }
+                    repoUse.Delete(id);
                 }
 
                 //SearchByIdUse
@@ -1638,27 +893,19 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã công dụng cần tìm: ");
                     string id = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(id))
+                    Use use = repoUse.SearchById(id);
+                    if (use != null)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập mã công dụng cần tìm: Trống.");
+                        Console.WriteLine($"+{new string('-', 88)}+");
+                        Console.WriteLine($"|{"",30}{"Kết quả tìm công dụng theo mã",-58}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
+                        Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",20}{"Mô tả",-30} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
+                        use.Display();
                     }
                     else
                     {
-                        Use use = repoUse.SearchById(id);
-                        if (use != null)
-                        {
-                            Console.WriteLine($"+{new string('-', 88)}+");
-                            Console.WriteLine($"|{"",30}{"Kết quả tìm công dụng theo mã",-58}|");
-                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
-                            Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",20}{"Mô tả",-30} |");
-                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
-                            use.Display();
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không tìm thấy mã công dụng: {id}");
-                        }
+                        Console.WriteLine($"\u274C Không tìm thấy mã công dụng: {id}");
                     }
                 }
 
@@ -1668,27 +915,19 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập từ khóa cần tìm: ");
                     string keyWord = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(keyWord))
+                    List<Use> uses = repoUse.SearchByKeyWord(keyWord);
+                    if (uses.Count != 0)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        Console.WriteLine("Nhập từ khóa cần tìm: Trống.");
+                        Console.WriteLine($"+{new string('-', 88)}+");
+                        Console.WriteLine($"|{"",27}{"Kết quả tìm công dụng theo từ khóa",-61}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
+                        Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",20}{"Mô tả",-30} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
+                        uses.ForEach(use => use.Display());
                     }
                     else
                     {
-                        List<Use> uses = repoUse.SearchByKeyWord(keyWord);
-                        if (uses.Count != 0)
-                        {
-                            Console.WriteLine($"+{new string('-', 88)}+");
-                            Console.WriteLine($"|{"",27}{"Kết quả tìm công dụng theo từ khóa",-61}|");
-                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
-                            Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",20}{"Mô tả",-30} |");
-                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+");
-                            uses.ForEach(use => use.Display());
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\u274C Không tìm thấy từ khóa: {keyWord}");
-                        }
+                        Console.WriteLine($"\u274C Không tìm thấy từ khóa: {keyWord}");
                     }
                 }
 
@@ -1706,9 +945,433 @@ namespace AgriculturalSuppliesStore
                     }
                     else
                     {
-                        Console.WriteLine("Danh sách rỗng.");
+                        Console.WriteLine("\nDanh sách rỗng.");
                     }
                 }
+            }
+            
+            //BrandManagement
+            void BrandManagement()
+            {
+                bool exit = false;
+                while (!exit)
+                {
+                    Console.WriteLine($"+{new string('-', 48)}+");
+                    Console.WriteLine($"| {"",8}{"Quản lý danh mục thương hiệu",-38} |");
+                    Console.WriteLine($"+{new string('-', 48)}+");
+                    Console.WriteLine($"| {"",15}{"Menu chức năng",-31} |");
+                    Console.WriteLine($"+{new string('-', 48)}+");
+                    Console.WriteLine($"| {"[1] Xem danh sách thương hiệu",-46} |");
+                    Console.WriteLine($"| {"[2] Thêm thương hiệu",-46} |");
+                    Console.WriteLine($"| {"[3] Cập nhật thương hiệu",-46} |");
+                    Console.WriteLine($"| {"[4] Xóa thương hiệu",-46} |");
+                    Console.WriteLine($"| {"[5] Tìm thương hiệu theo mã",-46} |");
+                    Console.WriteLine($"| {"[6] Tìm thương hiệu theo từ khóa",-46} |");
+                    Console.WriteLine($"| [7] Xem danh sách sản phẩm của một thương hiệu |");
+                    Console.WriteLine($"| {"[0] Thoát",-46} |");
+                    Console.WriteLine($"+{new string('-', 48)}+");
+                    Console.Write("Vui lòng nhập số tương ứng với một trong các tùy chọn trên: ");
+                    string input = Console.ReadLine();
+                    switch (input)
+                    {
+                        case "1":
+                            DisplayAllBrand();
+                            break;
+                        case "2":
+                            AddBrand();
+                            break;
+                        case "3":
+                            UpdateBrand();
+                            break;
+                        case "4":
+                            DeleteBrand();
+                            break;
+                        case "5":
+                            SearchByIdBrand();
+                            break;
+                        case "6":
+                            SearchByKeyWordBrand();
+                            break;
+                        case "7":
+                            DisplayProductsOfBrand();
+                            break;
+                        case "0":
+                            exit = true;
+                            break;
+                        default:
+                            Console.WriteLine("\n\u274C Lựa chọn không hợp lệ, vui lòng thử lại.");
+                            break;
+                    }
+                }
+
+                // AddBrand
+                void AddBrand()
+                {
+                    string id = repoBrand.List.Count == 0 ? "B00001" : "B" + (int.Parse(repoBrand.List[repoBrand.List.Count - 1].Id.Substring(2)) + 1).ToString().PadLeft(5, '0');
+
+                    Console.Write("Nhập tên thương hiệu: ");
+                    string name = Console.ReadLine();
+
+                    Console.Write("Nhập email thương hiệu: ");
+                    string email = Console.ReadLine();
+
+                    Console.Write("Nhập số điện thoại thương hiệu: ");
+                    string phoneNumber = Console.ReadLine();
+
+                    Console.Write("Nhập địa chỉ thương hiệu: ");
+                    string address = Console.ReadLine();
+
+                    Console.Write("Nhập quốc gia thương hiệu: ");
+                    string country = Console.ReadLine();
+
+                    repoBrand.Add(new Brand(id, name, email, phoneNumber, address, country));
+                }
+
+                // UpdateBrand
+                void UpdateBrand()
+                {
+                    Console.Write("Nhập mã thương hiệu cần cập nhật: ");
+                    string id = Console.ReadLine();
+
+                    Brand brand = repoBrand.SearchById(id);
+
+                    if (brand != null)
+                    {
+                        Console.Write("Nhập tên mới cho thương hiệu: ");
+                        brand.BrandName = Console.ReadLine();
+
+                        Console.Write("Nhập email mới cho thương hiệu: ");
+                        brand.BrandEmail = Console.ReadLine();
+
+                        Console.Write("Nhập số điện thoại mới cho thương hiệu: ");
+                        brand.BrandPhoneNumber = Console.ReadLine();
+
+                        Console.Write("Nhập địa chỉ mới cho thương hiệu: ");
+                        brand.BrandAddress = Console.ReadLine();
+
+                        Console.Write("Nhập quốc gia mới cho thương hiệu: ");
+                        brand.BrandCountry = Console.ReadLine();
+
+                        repoBrand.Update(id, brand);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
+                    }
+                }
+
+
+                // DeleteBrand
+                void DeleteBrand () 
+                {
+                    Console.Write("Nhập mã thương hiệu cần xóa: ");
+                    string id = Console.ReadLine();
+
+                    repoEmployee.Delete(id);
+                }
+
+                // SearchByIdBrand
+                void SearchByIdBrand () 
+                {
+                    Console.Write("Nhập mã thương hiệu cần tìm: ");
+                    string id = Console.ReadLine();
+
+                    Brand brand = repoBrand.SearchById(id);
+                    if (brand != null)
+                    {
+                        Console.WriteLine($"+{new string('-', 140)}+");
+                        Console.WriteLine($"|{"",55}{"Kết quả tìm thương hiệu theo mã",-85}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"",12}{"Email",-18} | {"Số điện thoại",-12} | {"",11}{"Địa chỉ",-19} | {"",2}{"Quốc gia",-18} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        brand.Display();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\u274C Không tìm thấy mã thương hiệu: {id}");
+                    }
+                }
+
+                // SearchByKeyWordBrand
+                void SearchByKeyWordBrand () 
+                {
+                    Console.Write("Nhập từ khóa cần tìm: ");
+                    string keyWord = Console.ReadLine();
+
+                    List<Brand> brands = repoBrand.SearchByKeyWord(keyWord);
+                    if (brands.Count != 0)
+                    {
+                        Console.WriteLine($"+{new string('-', 140)}+");
+                        Console.WriteLine($"|{"",53}{"Kết quả tìm thương hiệu theo từ khóa",-87}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"",12}{"Email",-18} | {"Số điện thoại",-12} | {"",11}{"Địa chỉ",-19} | {"",2}{"Quốc gia",-18} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        brands.ForEach(brand => brand.Display());
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\u274C Không tìm thấy từ khóa: {keyWord}");
+                    }
+                }
+
+                // DisplayAllBrand
+                void DisplayAllBrand () 
+                {
+                    if (repoBrand.List.Count > 0) 
+                    {
+                        Console.WriteLine($"+{new string('-', 140)}+");
+                        Console.WriteLine($"|{"",60}{"Danh sách thương hiệu",-80}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"",12}{"Email",-18} | {"Số điện thoại",-12} | {"",11}{"Địa chỉ",-19} | {"",2}{"Quốc gia",-18} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        repoBrand.DisplayAll();
+                    } else {
+                          Console.WriteLine("\nDanh sách rỗng.");
+                    }
+                }
+
+                // DisplayProductsOfBrand
+                void DisplayProductsOfBrand () 
+                {
+                   Console.Write("Nhập mã thương hiệu cần xem các sản phẩm: ");
+                    string id = Console.ReadLine();
+
+                    if (repoBrand.SearchById(id) != null)
+                    {
+                        List<Fertilizer> fertilizers = repoFertilizer.List.FindAll(item => item.BrandId == id.ToUpper());
+
+                        if (fertilizers.Count > 0)
+                        {
+                            Console.WriteLine($"+{new string('-', 199)}+");
+                            Console.WriteLine($"|{"",74}{"Danh sách sản phẩm thuộc thương hiệu có mã " + id.ToUpper(),-125}|");
+                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
+                            Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"",4}{"Giá",-6} | {"",1}{"Số lượng",-9} | {"",23}{"Mô tả",-27} | {"",4}{"Kiểu đóng gói",-17} | Ngày sản xuất | Ngày hết hạn | {"",1}{"Mã nhóm",-9} | Mã thương hiệu |");
+                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 12)}+{new string('-', 52)}+{new string('-', 23)}+{new string('-', 15)}+{new string('-', 14)}+{new string('-', 12)}+{new string('-', 16)}+");
+                            fertilizers.ForEach(fertilizer => fertilizer.Display());
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Thương hiệu có mã {id} không có sản phẩm nào.");
+                        }
+                    } else
+                    {
+                        Console.WriteLine($"Thương hiệu có mã {id} không tồn tại.");
+                    }
+                }
+
+            }
+
+            //EmployeeManagement
+            void EmployeeManagement()
+            {
+                bool exit = false;
+                while (!exit)
+                {
+                    Console.WriteLine($"+{new string('-', 61)}+");
+                    Console.WriteLine($"| {"",16}{"Quản lý danh mục nhân viên",-43} |");
+                    Console.WriteLine($"+{new string('-', 61)}+");
+                    Console.WriteLine($"| {"",22}{"Menu chức năng",-37} |");
+                    Console.WriteLine($"+{new string('-', 61)}+");
+                    Console.WriteLine($"| {"[1] Xem danh sách nhân viên",-59} |");
+                    Console.WriteLine($"| {"[2] Thêm nhân viên",-59} |");
+                    Console.WriteLine($"| {"[3] Cập nhật nhân viên",-59} |");
+                    Console.WriteLine($"| {"[4] Xóa nhân viên",-59} |");
+                    Console.WriteLine($"| {"[5] Tìm nhân viên theo mã",-59} |");
+                    Console.WriteLine($"| {"[6] Tìm nhân viên theo từ khóa",-59} |");
+                    Console.WriteLine($"| [7] Xem danh sách nhóm sản phẩm phụ trách bởi một nhân viên |");
+                    Console.WriteLine($"| {"[0] Thoát",-59} |");
+                    Console.WriteLine($"+{new string('-', 61)}+");
+                    Console.Write("Vui lòng nhập số tương ứng với một trong các tùy chọn trên: ");
+                    string input = Console.ReadLine();
+                    switch (input)
+                    {
+                        case "1":
+                            DisplayAllEmployee();
+                            break;
+                        case "2":
+                            AddEmployee();
+                            break;
+                        case "3":
+                            UpdateEmployee();
+                            break;
+                        case "4":
+                            DeleteEmployee();
+                            break;
+                        case "5":
+                            SearchByIdEmployee();
+                            break;
+                        case "6":
+                            SearchByKeyWordEmployee();
+                            break;
+                        case "7":
+                            DisplayGroupProductsByEmployee();
+                            break;
+                        case "0":
+                            exit = true;
+                            break;
+                        default:
+                            Console.WriteLine("\n\u274C Lựa chọn không hợp lệ, vui lòng thử lại.");
+                            break;
+                    }
+                }
+
+                // AddEmployee
+                void AddEmployee () 
+                {
+                    string id = repoEmployee.List.Count == 0 ? "E00001" : "E" + (int.Parse(repoEmployee.List[repoEmployee.List.Count - 1].Id.Substring(2)) + 1).ToString().PadLeft(5, '0');
+
+                    Console.Write("Nhập tên: ");
+                    string name = Console.ReadLine();
+
+                    Console.Write("Nhập ngày sinh (yyyy-MM-dd): ");
+                    DateTime dateOfBirth = DateTime.Parse(Console.ReadLine());
+
+                    Console.Write("Nhập số điện thoại: ");
+                    string phoneNumber = Console.ReadLine();
+
+                    Console.Write("Nhập địa chỉ: ");
+                    string address = Console.ReadLine();
+
+                    Console.Write("Nhập vị trí công việc: ");
+                    string position = Console.ReadLine();
+
+                    repoEmployee.Add(new Employee(id, name, dateOfBirth, phoneNumber, address, position));
+                }
+
+                //UpdateEmployee
+                void UpdateEmployee()
+                {
+                    Console.Write("Nhập mã nhân viên cần cập nhật: ");
+                    string id = Console.ReadLine();
+
+                    Employee employee = repoEmployee.SearchById(id);
+
+                    if (employee != null)
+                    {
+                        Console.Write("Nhập tên mới: ");
+                        employee.EmployeeName = Console.ReadLine();
+
+                        Console.Write("Nhập ngày sinh mới (dd/mm/yyyy): ");
+                        employee.EmployeeDateOfBirth = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+
+                        Console.Write("Nhập số điện thoại mới: ");
+                        employee.EmployeePhoneNumber = Console.ReadLine();
+
+                        Console.Write("Nhập địa chỉ mới: ");
+                        employee.EmployeeAddress = Console.ReadLine();
+
+                        Console.Write("Nhập vị trí công việc mới: ");
+                        employee.EmployeePosition = Console.ReadLine();
+
+                        repoEmployee.Update(id, employee);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\u274C Không thể cập nhật. Không tồn tại mã: {id}.");
+                    }
+                }
+
+                // DeleteEmployee
+                void DeleteEmployee () 
+                {
+                    Console.Write("Nhập mã nhân viên cần xóa: ");
+                    string id = Console.ReadLine();
+
+                    repoEmployee.Delete(id);
+                }
+
+                // SearchByIdEmployee
+                void SearchByIdEmployee () 
+                {
+                    Console.Write("Nhập mã nhân viên cần tìm: ");
+                    string id = Console.ReadLine();
+
+                    Employee employee = repoEmployee.SearchById(id);
+                    if (employee != null)
+                    {
+                        Console.WriteLine($"+{new string('-', 120)}+");
+                        Console.WriteLine($"|{"",46}{"Kết quả tìm nhân viên theo mã",-74}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"Ngày sinh",-10} | {"Số điện thoại",-12} | {"",11}{"Địa chỉ",-19} | {"",2}{"Vị trí việc làm",-18} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        employee.Display();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\u274C Không tìm thấy mã nhân viên: {id}");
+                    }
+                }
+                
+                // SearchByKeyWordEmployee
+                void SearchByKeyWordEmployee () 
+                {
+                    Console.Write("Nhập từ khóa cần tìm: ");
+                    string keyWord = Console.ReadLine();
+
+                    List<Employee> employees = repoEmployee.SearchByKeyWord(keyWord);
+                    if (employees.Count != 0)
+                    {
+                        Console.WriteLine($"+{new string('-', 120)}+");
+                        Console.WriteLine($"|{"",43}{"Kết quả tìm nhân viên theo từ khóa",-77}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"Ngày sinh",-10} | {"Số điện thoại",-12} | {"",11}{"Địa chỉ",-19} | {"",2}{"Vị trí việc làm",-18} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        employees.ForEach(employee => employee.Display());
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\u274C Không tìm thấy từ khóa: {keyWord}");
+                    }
+                }
+                
+                // DisplayAllEmployee
+                void DisplayAllEmployee () 
+                {
+                    if (repoEmployee.List.Count != 0)
+                    {
+                        Console.WriteLine($"+{new string('-', 120)}+");
+                        Console.WriteLine($"|{"",52}{"Danh sách nhân viên",-68}|");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        Console.WriteLine($"| {"",4}{"Mã",-6} | {"",8}{"Tên",-12} | {"Ngày sinh",-10} | {"Số điện thoại",-12} | {"",11}{"Địa chỉ",-19} | {"",2}{"Vị trí việc làm",-18} |");
+                        Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 12)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
+                        repoEmployee.DisplayAll();
+                    }
+                else
+                {
+                    Console.WriteLine("\nDanh sách rỗng.");
+                }
+                }
+                
+                // DisplayProductsOfEmployee
+                void DisplayGroupProductsByEmployee () 
+                {
+                    Console.Write("Nhập mã nhân viên cần xem các nhóm sản phẩm đang phụ trách: ");
+                    string id = Console.ReadLine();
+
+                    if (repoEmployee.SearchById(id) != null)
+                    {
+                        List<GroupProduct> groupProducts = repoGroupProduct.List.FindAll(item => item.EmployeeId == id.ToUpper());
+
+                        if (groupProducts.Count > 0)
+                        {
+                            Console.WriteLine($"+{new string('-', 103)}+");
+                            Console.WriteLine($"|{"",26}{"Danh sách nhóm sản phẩm phụ trách bởi nhân viên có mã " + id.ToUpper(),-77}|");
+                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+{new string('-', 14)}+");
+                            Console.WriteLine($"|{"",5}{"Mã",-6} | {"",9}{"Tên",-11} | {"",23}{"Mô tả",-27} | {"Mã nhân viên",-12} |");
+                            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 52)}+{new string('-', 14)}+");
+                            groupProducts.ForEach(groupProduct => groupProduct.Display());
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Nhân viên sản phẩm có mã {id} chưa phụ trách sản phẩm nào.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Nhân viên có mã {id} không tồn tại.");
+                    }
+                }
+                
             }
         }
     }

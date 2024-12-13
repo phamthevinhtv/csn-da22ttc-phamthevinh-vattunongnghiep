@@ -35,8 +35,8 @@ namespace AgriculturalSuppliesStore.Entities
 
         public void Display()
         {
-            Console.WriteLine($"| {this.id,-6} | {this.brandName,-20} | {this.brandEmail,-30} | {this.brandPhoneNumber,-15} | {this.brandAddress,-30} | {this.brandCountry,-20} |");
-            Console.WriteLine($"+{new string('-', 8)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 17)}+{new string('-', 32)}+{new string('-', 22)}+");
+            Console.WriteLine($"| {this.id,-10} | {this.brandName,-20} | {this.brandEmail,-30} | {this.brandPhoneNumber,-13} | {this.brandAddress,-30} | {this.brandCountry,-20} |");
+            Console.WriteLine($"+{new string('-', 12)}+{new string('-', 22)}+{new string('-', 32)}+{new string('-', 15)}+{new string('-', 32)}+{new string('-', 22)}+");
         }
 
         public override bool Equals(object obj)
