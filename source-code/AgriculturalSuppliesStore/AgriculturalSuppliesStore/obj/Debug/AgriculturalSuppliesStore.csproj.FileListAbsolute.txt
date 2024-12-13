@@ -1,0 +1,7 @@
+C:\Users\thevi\source\AgriculturalSuppliesStore\AgriculturalSuppliesStore\obj\Debug\AgriculturalSuppliesStore.csproj.AssemblyReference.cache
+C:\Users\thevi\source\AgriculturalSuppliesStore\AgriculturalSuppliesStore\obj\Debug\AgriculturalSuppliesStore.csproj.CoreCompileInputs.cache
+C:\Users\thevi\source\AgriculturalSuppliesStore\AgriculturalSuppliesStore\bin\Debug\AgriculturalSuppliesStore.exe.config
+C:\Users\thevi\source\AgriculturalSuppliesStore\AgriculturalSuppliesStore\bin\Debug\AgriculturalSuppliesStore.exe
+C:\Users\thevi\source\AgriculturalSuppliesStore\AgriculturalSuppliesStore\bin\Debug\AgriculturalSuppliesStore.pdb
+C:\Users\thevi\source\AgriculturalSuppliesStore\AgriculturalSuppliesStore\obj\Debug\AgriculturalSuppliesStore.exe
+C:\Users\thevi\source\AgriculturalSuppliesStore\AgriculturalSuppliesStore\obj\Debug\AgriculturalSuppliesStore.pdb
