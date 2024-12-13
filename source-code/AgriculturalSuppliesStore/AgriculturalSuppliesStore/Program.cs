@@ -407,7 +407,7 @@ namespace AgriculturalSuppliesStore
                     Console.Write("Nhập mã nhóm của sản phẩm: ");
                     string groupProductId = Console.ReadLine();
 
-                    repoFertilizer.Add(new Fertilizer(id, name, price, quantity, description, packagingType, manufacturingDate, expiryDate, brandId, groupProductId));
+                    repoFertilizer.Add(new Fertilizer(id, name, price, quantity, description, packagingType, manufacturingDate, expiryDate, brandId.ToUpper(), groupProductId.ToUpper()));
                 }
 
 
@@ -451,11 +451,11 @@ namespace AgriculturalSuppliesStore
 
                         Console.Write("Nhập mã thương hiệu mới cho sản phẩm: ");
                         string brandId = Console.ReadLine();
-                        fertilizer.BrandId = brandId;
+                        fertilizer.BrandId = brandId.ToUpper();
 
                         Console.Write("Nhập mã nhóm mới cho sản phẩm: ");
                         string groupProductId = Console.ReadLine();
-                        fertilizer.GroupProductId = groupProductId;
+                        fertilizer.GroupProductId = groupProductId.ToUpper();
 
                         repoFertilizer.Update(id, fertilizer);
                     }
