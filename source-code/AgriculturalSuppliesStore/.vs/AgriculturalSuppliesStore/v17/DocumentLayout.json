@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|c:\\hocphan\\doancsn\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\agriculturalsuppliesstore\\agriculturalsuppliesstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\productcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\productcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\repos\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\repos\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\fertilizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\fertilizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\productuse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\productuse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\productcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\productcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\use.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\use.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|c:\\hocphan\\doancsn\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\agriculturalsuppliesstore\\agriculturalsuppliesstore\\entities\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\component.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\fertilizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\fertilizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,14 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\groupproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\groupproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\repos\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60206242-4FD8-46BC-BA41-0E2B5CAD8DA5}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\repos\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,103 +54,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Use.cs",
-              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Use.cs",
-              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Use.cs",
-              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Use.cs",
-              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Use.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T23:13:25.886Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Employee.cs",
-              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Employee.cs",
-              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Employee.cs",
-              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Employee.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA3wCEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T13:49:40.039Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Repo.cs",
-              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Repos\\Repo.cs",
-              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Repos\\Repo.cs",
-              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Repos\\Repo.cs",
-              "RelativeToolTip": "AgriculturalSuppliesStore\\Repos\\Repo.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAswBUAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T12:19:48.454Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Component.cs",
               "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Component.cs",
               "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Component.cs",
               "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Component.cs",
               "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Component.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAqwBsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAwwDYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T10:16:16.173Z"
+              "WhenOpened": "2024-12-13T10:16:16.173Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Fertilizer.cs",
-              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Fertilizer.cs",
-              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Fertilizer.cs",
-              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Fertilizer.cs",
-              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Fertilizer.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBIAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Use.cs",
+              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Use.cs",
+              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Use.cs",
+              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Use.cs",
+              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Use.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswDEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T07:36:16.905Z"
+              "WhenOpened": "2024-12-13T23:13:25.886Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Brand.cs",
-              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Brand.cs",
-              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Brand.cs",
-              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Brand.cs",
-              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Brand.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA3wCIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T05:53:44.324Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductUse.cs",
-              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\ProductUse.cs",
-              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\ProductUse.cs",
-              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\ProductUse.cs",
-              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\ProductUse.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T05:16:22.721Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ProductComponent.cs",
               "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\ProductComponent.cs",
               "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\ProductComponent.cs",
               "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\ProductComponent.cs",
               "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\ProductComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T05:15:58.495Z"
+              "WhenOpened": "2024-12-13T05:15:58.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductUse.cs",
+              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\ProductUse.cs",
+              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\ProductUse.cs",
+              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\ProductUse.cs",
+              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\ProductUse.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwDAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T05:16:22.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Fertilizer.cs",
+              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Fertilizer.cs",
+              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Fertilizer.cs",
+              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Fertilizer.cs",
+              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Fertilizer.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T07:36:16.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Repo.cs",
+              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Repos\\Repo.cs",
+              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Repos\\Repo.cs",
+              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Repos\\Repo.cs",
+              "RelativeToolTip": "AgriculturalSuppliesStore\\Repos\\Repo.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAswFsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T12:19:48.454Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -160,34 +142,62 @@
               "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Program.cs",
               "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Program.cs",
               "RelativeToolTip": "AgriculturalSuppliesStore\\Program.cs",
-              "ViewState": "AgIAAEMDAAAAAAAAAAAUwFsDAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAB4BAAAAAAAAAAAQwDUBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T23:30:06.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GroupProduct.cs",
-              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\GroupProduct.cs",
-              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\GroupProduct.cs",
-              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\GroupProduct.cs",
-              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\GroupProduct.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Brand.cs",
+              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Brand.cs",
+              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Brand.cs",
+              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Brand.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAIwEAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T14:15:01.289Z"
+              "WhenOpened": "2024-12-13T05:53:44.324Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Product.cs",
               "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Product.cs",
               "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Product.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAADwvxsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAUwEQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T05:15:20.251Z"
+              "WhenOpened": "2024-12-13T05:15:20.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\Employee.cs",
+              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\Employee.cs",
+              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\Employee.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAIwEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T13:49:40.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GroupProduct.cs",
+              "DocumentMoniker": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\GroupProduct.cs",
+              "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Entities\\GroupProduct.cs",
+              "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\source-code\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Entities\\GroupProduct.cs",
+              "RelativeToolTip": "AgriculturalSuppliesStore\\Entities\\GroupProduct.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAA9wDYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T14:15:01.289Z",
+              "EditorCaption": ""
             }
           ]
         }
