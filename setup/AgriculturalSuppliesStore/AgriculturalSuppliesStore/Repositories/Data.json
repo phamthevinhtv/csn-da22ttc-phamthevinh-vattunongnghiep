@@ -1,0 +1,349 @@
+{
+  "productGroups": [
+    {
+      "Id": "PG00001",
+      "ProductGroupName": "Phân đạm/ure",
+      "ProductGroupDescription": "_",
+      "EmployeeId": "E00001"
+    },
+    {
+      "Id": "PG00002",
+      "ProductGroupName": "Phân potassium",
+      "ProductGroupDescription": "_",
+      "EmployeeId": "E00002"
+    },
+    {
+      "Id": "PG00003",
+      "ProductGroupName": "Phân DAP/NP",
+      "ProductGroupDescription": "_",
+      "EmployeeId": "E00002"
+    },
+    {
+      "Id": "PG00004",
+      "ProductGroupName": "Phân NPK",
+      "ProductGroupDescription": "_",
+      "EmployeeId": "E00001"
+    }
+  ],
+  "fertilizers": [
+    {
+      "Id": "P00001",
+      "ProductName": "Phân ure đen",
+      "ProductPrice": 550000.0,
+      "ProductQuantity": 20,
+      "FertilizerPackagingType": "Bao 50kg",
+      "FertilizerManufacturingDate": "2024-12-28T00:00:00",
+      "FertilizerExpiryDate": "2025-12-28T00:00:00",
+      "ProductDescription": "_",
+      "BrandId": "B00001",
+      "GroupProductId": "PG00001"
+    },
+    {
+      "Id": "P00002",
+      "ProductName": "Phân đạm Ammoni Clorua",
+      "ProductPrice": 560000.0,
+      "ProductQuantity": 25,
+      "FertilizerPackagingType": "Bao 50kg",
+      "FertilizerManufacturingDate": "2024-12-27T00:00:00",
+      "FertilizerExpiryDate": "2025-12-27T00:00:00",
+      "ProductDescription": "_",
+      "BrandId": "B00001",
+      "GroupProductId": "PG00001"
+    },
+    {
+      "Id": "P00003",
+      "ProductName": "Phân Kali Clorua 61",
+      "ProductPrice": 590000.0,
+      "ProductQuantity": 15,
+      "FertilizerPackagingType": "Bao 50kg",
+      "FertilizerManufacturingDate": "2024-12-27T00:00:00",
+      "FertilizerExpiryDate": "2025-12-27T00:00:00",
+      "ProductDescription": "_",
+      "BrandId": "B00001",
+      "GroupProductId": "PG00002"
+    },
+    {
+      "Id": "P00004",
+      "ProductName": "Phân DAP 18 - 46",
+      "ProductPrice": 570000.0,
+      "ProductQuantity": 15,
+      "FertilizerPackagingType": "Bao 50kg",
+      "FertilizerManufacturingDate": "2024-12-26T00:00:00",
+      "FertilizerExpiryDate": "2025-12-26T00:00:00",
+      "ProductDescription": "_",
+      "BrandId": "B00001",
+      "GroupProductId": "PG00003"
+    },
+    {
+      "Id": "P00005",
+      "ProductName": "Phân NOVACID 12-4-36+3CaO+TE",
+      "ProductPrice": 1475000.0,
+      "ProductQuantity": 10,
+      "FertilizerPackagingType": "Bao 25kg",
+      "FertilizerManufacturingDate": "2024-12-28T00:00:00",
+      "FertilizerExpiryDate": "2025-12-28T00:00:00",
+      "ProductDescription": "_",
+      "BrandId": "B00002",
+      "GroupProductId": "PG00004"
+    }
+  ],
+  "brands": [
+    {
+      "Id": "B00001",
+      "BrandName": "VietNga Agri",
+      "BrandEmail": "hotro@vietnga.vn",
+      "BrandPhoneNumber": "02773870660",
+      "BrandAddress": "Số 710, Đường Nguyễn Huệ, Phường Mỹ Phú, Thành phố Cao Lãnh, Tỉnh Đồng Tháp",
+      "BrandCountry": "Việt Nam"
+    },
+    {
+      "Id": "B00002",
+      "BrandName": "ICL",
+      "BrandEmail": "contactus@icl-group.com",
+      "BrandPhoneNumber": "+972 36844400",
+      "BrandAddress": "Millennium Tower, 23 Aranha St. Tel Aviv, 6107025",
+      "BrandCountry": "Israel"
+    }
+  ],
+  "employees": [
+    {
+      "Id": "E00001",
+      "EmployeeName": "Phạm Văn A",
+      "EmployeeDateOfBirth": "1998-02-10T00:00:00",
+      "EmployeeGender": "Nam",
+      "EmployeePhoneNumber": "0123456789",
+      "EmployeeAddress": "Khóm 1, Phường 2, Tp Trà Vinh, Tỉnh Trà Vinh",
+      "EmployeePosition": "Kiểm tra hàng"
+    },
+    {
+      "Id": "E00002",
+      "EmployeeName": "Nguyễn Văn B",
+      "EmployeeDateOfBirth": "2000-10-01T00:00:00",
+      "EmployeeGender": "Nam",
+      "EmployeePhoneNumber": "0987654321",
+      "EmployeeAddress": "Khóm 8, Phường 7, Tp Trà Vinh, Tỉnh Trà Vinh",
+      "EmployeePosition": "Kiểm tra hàng"
+    },
+    {
+      "Id": "E00003",
+      "EmployeeName": "Trần Thị B",
+      "EmployeeDateOfBirth": "1999-06-08T00:00:00",
+      "EmployeeGender": "Nữ",
+      "EmployeePhoneNumber": "0456123789",
+      "EmployeeAddress": "Ấp Rạch Mát, Xã Nhị Long, Huyện Càng Long, Tỉnh Trà Vinh",
+      "EmployeePosition": "Tư vấn & bán hàng"
+    }
+  ],
+  "uses": [
+    {
+      "Id": "U00001",
+      "UseName": "Cung cấp đạm",
+      "UseDescription": "_"
+    },
+    {
+      "Id": "U00002",
+      "UseName": "Hạn chế thoái hóa đất",
+      "UseDescription": "_"
+    },
+    {
+      "Id": "U00003",
+      "UseName": "Tránh ngộ độc hữu cơ",
+      "UseDescription": "_"
+    },
+    {
+      "Id": "U00004",
+      "UseName": "Hạn chế rụng hoa và trái non",
+      "UseDescription": "_"
+    },
+    {
+      "Id": "U00005",
+      "UseName": "Tăng sức đề kháng",
+      "UseDescription": "_"
+    },
+    {
+      "Id": "U00006",
+      "UseName": "Cung cấp dinh dưỡng hàm lượng cao",
+      "UseDescription": "_"
+    },
+    {
+      "Id": "U00007",
+      "UseName": "Cải thiện cấu trúc đất",
+      "UseDescription": "_"
+    }
+  ],
+  "components": [
+    {
+      "Id": "C00001",
+      "ComponentName": "Đạm tổng số (Nts)",
+      "ComponentDescription": "_"
+    },
+    {
+      "Id": "C00002",
+      "ComponentName": "Buriet",
+      "ComponentDescription": "_"
+    },
+    {
+      "Id": "C00003",
+      "ComponentName": "Độ ẩm",
+      "ComponentDescription": "_"
+    },
+    {
+      "Id": "C00004",
+      "ComponentName": "Axit tự do (quy về H2SO4)",
+      "ComponentDescription": "_"
+    },
+    {
+      "Id": "C00005",
+      "ComponentName": "Lân hữu hiệu (P2O5hh)",
+      "ComponentDescription": "_"
+    },
+    {
+      "Id": "C00006",
+      "ComponentName": "Cadimi (Cd))",
+      "ComponentDescription": "_"
+    },
+    {
+      "Id": "C00007",
+      "ComponentName": "Kali hữu hiệu (K2Ohh)",
+      "ComponentDescription": "_"
+    }
+  ],
+  "productComponents": [
+    {
+      "Id": "PC00001",
+      "ProductId": "P00001",
+      "ComponentId": "C00001",
+      "ComponentPercentage": "46%"
+    },
+    {
+      "Id": "PC00002",
+      "ProductId": "P00001",
+      "ComponentId": "C00002",
+      "ComponentPercentage": "1.2%"
+    },
+    {
+      "Id": "PC00003",
+      "ProductId": "P00001",
+      "ComponentId": "C00003",
+      "ComponentPercentage": "1%"
+    },
+    {
+      "Id": "PC00004",
+      "ProductId": "P00002",
+      "ComponentId": "C00001",
+      "ComponentPercentage": "25%"
+    },
+    {
+      "Id": "PC00005",
+      "ProductId": "P00002",
+      "ComponentId": "C00003",
+      "ComponentPercentage": "1%"
+    },
+    {
+      "Id": "PC00006",
+      "ProductId": "P00002",
+      "ComponentId": "C00004",
+      "ComponentPercentage": "0.5%"
+    },
+    {
+      "Id": "PC00007",
+      "ProductId": "P00005",
+      "ComponentId": "C00001",
+      "ComponentPercentage": "12%"
+    },
+    {
+      "Id": "PC00008",
+      "ProductId": "P00005",
+      "ComponentId": "C00005",
+      "ComponentPercentage": "4%"
+    },
+    {
+      "Id": "PC00009",
+      "ProductId": "P00004",
+      "ComponentId": "C00004",
+      "ComponentPercentage": "18%"
+    },
+    {
+      "Id": "PC00010",
+      "ProductId": "P00004",
+      "ComponentId": "C00005",
+      "ComponentPercentage": "46%"
+    },
+    {
+      "Id": "PC00011",
+      "ProductId": "P00004",
+      "ComponentId": "C00003",
+      "ComponentPercentage": "2.5%"
+    },
+    {
+      "Id": "PC00012",
+      "ProductId": "P00004",
+      "ComponentId": "C00006",
+      "ComponentPercentage": "12ppm"
+    },
+    {
+      "Id": "PC00013",
+      "ProductId": "P00003",
+      "ComponentId": "C00007",
+      "ComponentPercentage": "61%"
+    },
+    {
+      "Id": "PC00014",
+      "ProductId": "P00003",
+      "ComponentId": "C00003",
+      "ComponentPercentage": "1%"
+    }
+  ],
+  "productUses": [
+    {
+      "Id": "PU00001",
+      "ProductId": "P00001",
+      "UseId": "U00001"
+    },
+    {
+      "Id": "PU00002",
+      "ProductId": "P00001",
+      "UseId": "U00002"
+    },
+    {
+      "Id": "PU00003",
+      "ProductId": "P00001",
+      "UseId": "U00003"
+    },
+    {
+      "Id": "PU00004",
+      "ProductId": "P00002",
+      "UseId": "U00001"
+    },
+    {
+      "Id": "PU00005",
+      "ProductId": "P00005",
+      "UseId": "U00004"
+    },
+    {
+      "Id": "PU00006",
+      "ProductId": "P00005",
+      "UseId": "U00005"
+    },
+    {
+      "Id": "PU00007",
+      "ProductId": "P00004",
+      "UseId": "U00006"
+    },
+    {
+      "Id": "PU00008",
+      "ProductId": "P00004",
+      "UseId": "U00001"
+    },
+    {
+      "Id": "PU00009",
+      "ProductId": "P00003",
+      "UseId": "U00005"
+    },
+    {
+      "Id": "PU00010",
+      "ProductId": "P00003",
+      "UseId": "U00007"
+    }
+  ]
+}
