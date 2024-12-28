@@ -108,7 +108,7 @@
   "employees": [
     {
       "Id": "E00001",
-      "EmployeeName": "Phạm Văn A",
+      "EmployeeName": "Phạm Văn Tuấn",
       "EmployeeDateOfBirth": "1998-02-10T00:00:00",
       "EmployeeGender": "Nam",
       "EmployeePhoneNumber": "0123456789",
@@ -117,7 +117,7 @@
     },
     {
       "Id": "E00002",
-      "EmployeeName": "Nguyễn Văn B",
+      "EmployeeName": "Nguyễn Văn Hoàng",
       "EmployeeDateOfBirth": "2000-10-01T00:00:00",
       "EmployeeGender": "Nam",
       "EmployeePhoneNumber": "0987654321",
@@ -126,7 +126,7 @@
     },
     {
       "Id": "E00003",
-      "EmployeeName": "Trần Thị B",
+      "EmployeeName": "Trần Thị Hoa",
       "EmployeeDateOfBirth": "1999-06-08T00:00:00",
       "EmployeeGender": "Nữ",
       "EmployeePhoneNumber": "0456123789",

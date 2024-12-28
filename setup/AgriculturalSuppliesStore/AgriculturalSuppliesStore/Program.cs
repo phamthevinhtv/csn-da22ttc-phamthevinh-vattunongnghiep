@@ -16,7 +16,7 @@ namespace AgriculturalSuppliesStore
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Projects\ConsoleApplication\AgriculturalSuppliesStore\AgriculturalSuppliesStore\Repositories\Data.json";
+            string path = @"C:\HocPhan\DoAnCSN\csn-da22ttc-phamthevinh-vattunongnghiep\setup\AgriculturalSuppliesStore\AgriculturalSuppliesStore\Repositories\Data.json";
 
             Repository<ProductGroup> productGroups = new Repository<ProductGroup>();
             Repository<Employee> employees = new Repository<Employee>();
@@ -2284,7 +2284,7 @@ namespace AgriculturalSuppliesStore
                 void DisplayAllProductUse()
                 {
                     Console.WriteLine("\n--- Xem danh sách liên kết ---");
-                    uses.DisplayAsTable();
+                    productUses.DisplayAsTable();
                 }
 
                 // Hiển thị chi tiết một liên kết
