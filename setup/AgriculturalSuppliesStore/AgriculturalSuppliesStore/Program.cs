@@ -16,7 +16,7 @@ namespace AgriculturalSuppliesStore
     {
         static void Main(string[] args)
         {
-            string path = @"C:\HocPhan\DoAnCSN\csn-da22ttc-phamthevinh-vattunongnghiep\setup\AgriculturalSuppliesStore\AgriculturalSuppliesStore\Repositories\Data.json";
+            string path = @"..\..\Repositories\Data.json";
 
             Repository<ProductGroup> productGroups = new Repository<ProductGroup>();
             Repository<Employee> employees = new Repository<Employee>();
@@ -475,31 +475,31 @@ namespace AgriculturalSuppliesStore
                     string name = CheckInput(1, "Nhập tên cho sản phẩm");
                     if (name == "=exit") return;
 
-                    string price = CheckNumber(1, "Nhập giá cho sản phẩm");
+                    string price = CheckNumber(1, "float", "Nhập giá cho sản phẩm (Số nguyên hoặc số thực)");
                     if (price == "=exit") return;
 
-                    string quantity = CheckNumber(1, "Nhập số lượng cho sản phẩm");
+                    string quantity = CheckNumber(1, "int", "Nhập số lượng cho sản phẩm (Số nguyên)");
                     if (quantity == "=exit") return;
 
                     string typePackaging = CheckInput(1, "Nhập kiểu đóng gói cho sản phẩm");
                     if (typePackaging == "=exit") return;
 
-                    string manufacturingDate = CheckDate(1, "Nhập ngày sản xuất cho sản phẩm");
+                    string manufacturingDate = CheckDate(1, "Nhập ngày sản xuất cho sản phẩm (dd/mm/yyyy)");
                     if (manufacturingDate == "=exit") return;
 
                     string expiryDate;
                     do
                     {
-                        expiryDate = CheckDate(1, "Nhập ngày hết hạn cho sản phẩm");
+                        expiryDate = CheckDate(1, "Nhập ngày hết hạn cho sản phẩm (dd/mm/yyyy)");
                         if (expiryDate == "=exit") return;
                         if (DateTime.Parse(expiryDate) <= DateTime.Parse(manufacturingDate))
                         {
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Ngày hết hạn phải sau ngày sản xuất. Vui lòng nhập lại.");
+                            Console.WriteLine("Ngày hết hạn phải sau ngày sản xuất. Vui lòng nhập lại." + new string(' ', 50));
                         } else if(DateTime.Parse(expiryDate) <= DateTime.Now)
                         {
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Ngày hết hạn phải sau ngày hiện tại. Vui lòng nhập lại.");
+                            Console.WriteLine("Ngày hết hạn phải sau ngày hiện tại. Vui lòng nhập lại." + new string(' ', 50));
                         } else
                         {
                             break;
@@ -513,7 +513,7 @@ namespace AgriculturalSuppliesStore
                     string brandId;
                     do
                     {
-                        brandId = CheckId(0, "Nhập mã thương hiệu cho sản phẩm");
+                        brandId = CheckId(0, "Nhập mã thương hiệu cho sản phẩm (<B><Chuỗi năm số nguyên >= 0>)");
                         if (brandId == "=exit") return;
                         if (brandId != "_")
                         {
@@ -536,7 +536,7 @@ namespace AgriculturalSuppliesStore
                     string productGroupId;
                     do
                     {
-                        productGroupId =  CheckId(0, "Nhập mã nhóm sản phẩm cho sản phẩm");
+                        productGroupId =  CheckId(0, "Nhập mã nhóm sản phẩm cho sản phẩm (<PG><Chuỗi năm số nguyên >= 0>)");
                         if (productGroupId == "=exit") return;
                         if (productGroupId != "_")
                         {
@@ -580,11 +580,11 @@ namespace AgriculturalSuppliesStore
                             if (name == "=exit") return;
                             if (name == "_") name = fertilizer.ProductName;
 
-                            string price = CheckNumber(0, "Nhập giá mới cho sản phẩm");
+                            string price = CheckNumber(0, "float", "Nhập giá mới cho sản phẩm");
                             if (price == "=exit") return;
                             if (price == "_") price = fertilizer.ProductPrice.ToString();
 
-                            string quantity = CheckNumber(0, "Nhập số lượng mới cho sản phẩm");
+                            string quantity = CheckNumber(0, "int", "Nhập số lượng mới cho sản phẩm");
                             if (quantity == "=exit") return;
                             if (quantity == "_") quantity = fertilizer.ProductQuantity.ToString();
 
@@ -606,12 +606,12 @@ namespace AgriculturalSuppliesStore
                                     if (DateTime.Parse(expiryDate) <= DateTime.Parse(manufacturingDate))
                                     {
                                         Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("Ngày hết hạn mới phải sau ngày sản xuất. Vui lòng nhập lại.");
+                                        Console.WriteLine("Ngày hết hạn mới phải sau ngày sản xuất. Vui lòng nhập lại." + new string(' ', 50));
                                     }
                                     else if (DateTime.Parse(expiryDate) <= DateTime.Now)
                                     {
                                         Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("Ngày hết hạn mới phải sau ngày hiện tại. Vui lòng nhập lại.");
+                                        Console.WriteLine("Ngày hết hạn mới phải sau ngày hiện tại. Vui lòng nhập lại." + new string(' ', 50));
                                     }
                                     else
                                     {
@@ -1780,7 +1780,7 @@ namespace AgriculturalSuppliesStore
                         if (DateTime.Parse(dateOfBirth).AddYears(18) > DateTime.Now)
                         {
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Ngày sinh không hợp lệ, nhân viên phải từ đủ 18 tuổi trở lên. Vui lòng nhập lại.");
+                            Console.WriteLine("Ngày sinh không hợp lệ, nhân viên phải từ đủ 18 tuổi trở lên. Vui lòng nhập lại." + new string(' ', 50));
                         } else
                         {
                             break;
@@ -1834,7 +1834,7 @@ namespace AgriculturalSuppliesStore
                                     if (DateTime.Parse(dateOfBirth).AddYears(18) > DateTime.Now)
                                     {
                                         Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("Ngày sinh mới không hợp lệ, nhân viên phải từ đủ 18 tuổi trở lên. Vui lòng nhập lại.");
+                                        Console.WriteLine("Ngày sinh mới không hợp lệ, nhân viên phải từ đủ 18 tuổi trở lên. Vui lòng nhập lại." + new string(' ', 50));
                                     }
                                     else
                                     {
@@ -2770,7 +2770,7 @@ namespace AgriculturalSuppliesStore
             }
 
             // Kiểm tra số 
-            string CheckNumber(int type, string request)
+            string CheckNumber(int type, string typeNumber, string request)
             {
                 string input;
                 do
@@ -2779,16 +2779,32 @@ namespace AgriculturalSuppliesStore
                     input = input.Contains('.') ? input.Replace('.', ',') : input;
                     if (input != "=exit" && input != "_")
                     {
-                        if (!int.TryParse(input, out _) && !float.TryParse(input, out _))
+                        if (typeNumber == "int")
                         {
-                            Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            int index = request.IndexOf("(");
-                            int length = index > 0 ? index - 7 : request.Length - 6;
-                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
-                        }
-                        else
+                            if (!int.TryParse(input, out _))
+                            {
+                                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                                int index = request.IndexOf("(");
+                                int length = index > 0 ? index - 7 : request.Length - 6;
+                                Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        } else
                         {
-                            break;
+                            if (!float.TryParse(input, out _))
+                            {
+                                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                                int index = request.IndexOf("(");
+                                int length = index > 0 ? index - 7 : request.Length - 6;
+                                Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
+                            }
+                            else
+                            {
+                                break;
+                            }
                         }
                     }
                     else
