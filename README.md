@@ -19,7 +19,7 @@
 2.1. Clone kho lưu trữ này về máy<br>
 2.2. Vào thư mục đã clone về máy. Tìm đến thư mục setup. Trong thư mục setup mở thư mục AgriculturalSuppliesStore. Trong thu mục AgriculturalSuppliesStore ta thấy tập tin AgriculturalSuppliesStore.sln. Mở tập tin AgriculturalSuppliesStore.sln với Visual Studio.<br>
 3. Chạy ứng dụng: Trong Visual Studio, trên thanh công cụ nhấn Start để chạy ứng dụng.<br>
-4. Thao tác: Ứng dụng được chia thành các menu thao tác, trong mỗi menu các chức năng được liệt kê thành các mục và đánh số thứ tự từ 1 đến n (với n là số lượng các chức năng) và chức năng thoát được đánh số 0. Để tương tác, người dùng cần nhập số tương ứng với chức năng đã liệt kê. Tất chức năng yêu cầu nhập (bao gồm cả việc nhập lựa chọn và nhập liệu thông tin), sau khi nhập xong người dùng cần nhấn Enter để hoàn tất thao tác.<br>
+4. Thao tác: Ứng dụng được chia thành các menu thao tác, trong mỗi menu các chức năng được liệt kê thành các mục và đánh số thứ tự từ 1 đến n (với n là số lượng các chức năng) và chức năng thoát được đánh số 0. Để tương tác, người dùng cần nhập số tương ứng với chức năng đã liệt kê. Tất chức năng yêu cầu nhập (bao gồm cả việc nhập lựa chọn và nhập liệu thông tin), sau khi nhập xong người dùng cần nhấn Enter để hoàn tất thao tác nhập.<br>
 5. Một số quy ước đối với các trường nhập liệu thông tin (thêm, sửa, xóa, tìm kiếm):<br>
 5.1. Lệnh "exit" là lệnh thoát khẩn cấp. Khi nhập lệnh này, chương trình sẽ bỏ qua tất cả các trường sau trường hiện tại trong chức năng và thoát khỏi chức năng đó.<br>
 5.2. Trường được đánh dấu "\*" là trường bắt buộc phải nhập. Chương trình sẽ cảnh báo khi trường không nhập thông tin nhưng lại nhấn Enter cho đến khi trường được nhập.<br>
