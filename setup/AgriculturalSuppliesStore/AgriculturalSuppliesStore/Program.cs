@@ -170,7 +170,7 @@ namespace AgriculturalSuppliesStore
                     string employeeId;
                     do
                     {
-                        employeeId =  CheckId(0, "Nhập mã nhân viên phụ trách nhóm sản phẩm");
+                        employeeId =  CheckId(0, "Nhập mã nhân viên phụ trách nhóm sản phẩm ([E] + [Năm số nguyên >= 0]");
                         if (employeeId == "=exit") return;
                         if (employeeId != "_")
                         {
@@ -202,7 +202,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần cập nhật");
+                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần cập nhật ([PG] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -221,7 +221,7 @@ namespace AgriculturalSuppliesStore
                             string employeeId;
                             do
                             {
-                                employeeId = CheckId(0, "Nhập mã nhân viên phụ trách mới cho nhóm sản phẩm");
+                                employeeId = CheckId(0, "Nhập mã nhân viên phụ trách mới cho nhóm sản phẩm ([E] + [Năm số nguyên >= 0]");
                                 if (employeeId == "=exit") return;
                                 if (employeeId != "_")
                                 {
@@ -260,7 +260,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần xóa");
+                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần xóa ([PG] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -276,19 +276,23 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần tìm");
+                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần tìm ([PG] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
-                        ProductGroup productGroup = productGroups.SearchById(id);
+                        Repository<ProductGroup> productGroupsWithId = new Repository<ProductGroup>();
 
-                        if (productGroup != null)
+                        ProductGroup productGroupSearch = productGroups.SearchById(id);
+
+                        if (productGroupSearch != null)
                         {
-                            productGroup.DisplayDetail();
+                            productGroupsWithId.Add(productGroupSearch);
+                            Console.SetCursorPosition(0, Console.CursorTop - 1);
+                            productGroupsWithId.DisplayAsTable();
                         }
                         else
                         {
-                            Console.WriteLine($"Không tìm nhóm sản phẩm có mã {id}");
+                            Console.WriteLine($"Không tìm thấy nhóm sản phẩm có mã: {id}");
                         }
                     }
                 }
@@ -341,7 +345,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần xem chi tiết");
+                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần xem chi tiết ([PG] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -365,7 +369,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
                     
-                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần xem các sản phẩm");
+                    string id = CheckId(0, "Nhập mã nhóm sản phẩm cần xem các sản phẩm ([PG] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -475,10 +479,10 @@ namespace AgriculturalSuppliesStore
                     string name = CheckInput(1, "Nhập tên cho sản phẩm");
                     if (name == "=exit") return;
 
-                    string price = CheckNumber(1, "float", "Nhập giá cho sản phẩm (Số nguyên hoặc số thực)");
+                    string price = CheckNumber(1, "float", "Nhập giá cho sản phẩm (Số nguyên hoặc số thực >= 0)");
                     if (price == "=exit") return;
 
-                    string quantity = CheckNumber(1, "int", "Nhập số lượng cho sản phẩm (Số nguyên)");
+                    string quantity = CheckNumber(1, "int", "Nhập số lượng cho sản phẩm (Số nguyên >= 0)");
                     if (quantity == "=exit") return;
 
                     string typePackaging = CheckInput(1, "Nhập kiểu đóng gói cho sản phẩm");
@@ -513,7 +517,7 @@ namespace AgriculturalSuppliesStore
                     string brandId;
                     do
                     {
-                        brandId = CheckId(0, "Nhập mã thương hiệu cho sản phẩm (<B><Chuỗi năm số nguyên >= 0>)");
+                        brandId = CheckId(0, "Nhập mã thương hiệu cho sản phẩm ([B] + [Năm số nguyên >= 0])");
                         if (brandId == "=exit") return;
                         if (brandId != "_")
                         {
@@ -536,7 +540,7 @@ namespace AgriculturalSuppliesStore
                     string productGroupId;
                     do
                     {
-                        productGroupId =  CheckId(0, "Nhập mã nhóm sản phẩm cho sản phẩm (<PG><Chuỗi năm số nguyên >= 0>)");
+                        productGroupId =  CheckId(0, "Nhập mã nhóm sản phẩm cho sản phẩm ([PG] + [Năm số nguyên >= 0])");
                         if (productGroupId == "=exit") return;
                         if (productGroupId != "_")
                         {
@@ -568,7 +572,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã sản phẩm cần cập nhật");
+                    string id = CheckId(0, "Nhập mã sản phẩm cần cập nhật ([P] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -580,11 +584,11 @@ namespace AgriculturalSuppliesStore
                             if (name == "=exit") return;
                             if (name == "_") name = fertilizer.ProductName;
 
-                            string price = CheckNumber(0, "float", "Nhập giá mới cho sản phẩm");
+                            string price = CheckNumber(0, "float", "Nhập giá mới cho sản phẩm (Số nguyên hoặc số thực >= 0)");
                             if (price == "=exit") return;
                             if (price == "_") price = fertilizer.ProductPrice.ToString();
 
-                            string quantity = CheckNumber(0, "int", "Nhập số lượng mới cho sản phẩm");
+                            string quantity = CheckNumber(0, "int", "Nhập số lượng mới cho sản phẩm (Số nguyến >= 0)");
                             if (quantity == "=exit") return;
                             if (quantity == "_") quantity = fertilizer.ProductQuantity.ToString();
 
@@ -592,14 +596,14 @@ namespace AgriculturalSuppliesStore
                             if (typePackaging == "=exit") return;
                             if (typePackaging == "_") typePackaging = fertilizer.FertilizerPackagingType;
 
-                            string manufacturingDate = CheckDate(0, "Nhập ngày sản xuất mới cho sản phẩm");
+                            string manufacturingDate = CheckDate(0, "Nhập ngày sản xuất mới cho sản phẩm (dd/mm/yyyy)");
                             if (manufacturingDate == "=exit") return;
                             if (manufacturingDate == "_") manufacturingDate = fertilizer.FertilizerManufacturingDate.ToString();
 
                             string expiryDate;
                             do
                             {
-                                expiryDate = CheckDate(0, "Nhập ngày hết hạn mới cho sản phẩm");
+                                expiryDate = CheckDate(0, "Nhập ngày hết hạn mới cho sản phẩm (dd/mm/yyyy)");
                                 if (expiryDate == "=exit") return;
                                 if (expiryDate != "_")
                                 {
@@ -632,7 +636,7 @@ namespace AgriculturalSuppliesStore
                             string brandId;
                             do
                             {
-                                brandId = CheckId(0, "Nhập mã thương hiệu mới cho sản phẩm");
+                                brandId = CheckId(0, "Nhập mã thương hiệu mới cho sản phẩm ([B] + [Năm số nguyên >= 0])");
                                 if (brandId == "=exit") return;
                                 if (brandId != "_")
                                 {
@@ -657,7 +661,7 @@ namespace AgriculturalSuppliesStore
                             string productGroupId;
                             do
                             {
-                                productGroupId = CheckId(0, "Nhập mã nhóm sản phẩm mới cho sản phẩm");
+                                productGroupId = CheckId(0, "Nhập mã nhóm sản phẩm mới cho sản phẩm ([PG] + [Năm số nguyên >= 0])");
                                 if (productGroupId == "=exit") return;
                                 if (productGroupId != "_")
                                 {
@@ -696,7 +700,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã sản phẩm cần xóa");
+                    string id = CheckId(0, "Nhập mã sản phẩm cần xóa ([P] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -712,19 +716,23 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã sản phẩm cần tìm");
+                    string id = CheckId(0, "Nhập mã sản phẩm cần tìm ([P] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
-                        Fertilizer fertilizer = fertilizers.SearchById(id);
+                        Repository<Fertilizer> fertilizersWithId = new Repository<Fertilizer>();
 
-                        if (fertilizer != null)
+                        Fertilizer fertilizerSearch = fertilizers.SearchById(id);
+
+                        if (fertilizerSearch != null)
                         {
-                            fertilizer.DisplayDetail();
+                            fertilizersWithId.Add(fertilizerSearch);
+                            Console.SetCursorPosition(0, Console.CursorTop - 1);
+                            fertilizersWithId.DisplayAsTable();
                         }
                         else
                         {
-                            Console.WriteLine($"Không tìm thấy sản phẩm có mã {id}");
+                            Console.WriteLine($"Không tìm thấy sản phẩm có mã: {id}");
                         }
                     }
                 }
@@ -777,7 +785,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã sản phẩm cần xem chi tiết");
+                    string id = CheckId(0, "Nhập mã sản phẩm cần xem chi tiết ([P] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -801,7 +809,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã sản phẩm cần xem các thành phần");
+                    string id = CheckId(0, "Nhập mã sản phẩm cần xem các thành phần ([P] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -952,7 +960,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã sản phầm cần xem các công dụng");
+                    string id = CheckId(0, "Nhập mã sản phầm cần xem các công dụng ([P] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1074,7 +1082,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thành phần cần cập nhật");
+                    string id = CheckId(0, "Nhập mã thành phần cần cập nhật ([C] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1107,7 +1115,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thành phần cần xóa");
+                    string id = CheckId(0, "Nhập mã thành phần cần xóa([C] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1123,19 +1131,23 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thành phần cần tìm");
+                    string id = CheckId(0, "Nhập mã thành phần cần tìm ([C] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
-                        Component component = components.SearchById(id);
+                        Repository<Component> componentsWithId = new Repository<Component>();
 
-                        if (component != null)
+                        Component componentSearch = components.SearchById(id);
+
+                        if (componentSearch != null)
                         {
-                            component.DisplayDetail();
+                            componentsWithId.Add(componentSearch);
+                            Console.SetCursorPosition(0, Console.CursorTop - 1);
+                            componentsWithId.DisplayAsTable();
                         }
                         else
                         {
-                            Console.WriteLine($"Không tìm thấy thành phần có mã {id}");
+                            Console.WriteLine($"Không tìm thấy thành phần có mã: {id}");
                         }
                     }
                 }
@@ -1188,7 +1200,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thành phần cần xem chi tiết");
+                    string id = CheckId(0, "Nhập mã thành phần cần xem chi tiết ([C] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1287,7 +1299,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã công dụng cần cập nhật");
+                    string id = CheckId(0, "Nhập mã công dụng cần cập nhật ([U] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1320,7 +1332,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã công dụng cần xóa");
+                    string id = CheckId(0, "Nhập mã công dụng cần xóa ([U] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1336,19 +1348,23 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã công dụng cần tìm");
+                    string id = CheckId(0, "Nhập mã công dụng cần tìm ([U] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
-                        Use use = uses.SearchById(id);
+                        Repository<Use> usesWithId = new Repository<Use>();
 
-                        if (use != null)
+                        Use useSearch = uses.SearchById(id);
+
+                        if (useSearch != null)
                         {
-                            use.DisplayDetail();
+                            usesWithId.Add(useSearch);
+                            Console.SetCursorPosition(0, Console.CursorTop - 1);
+                            usesWithId.DisplayAsTable();
                         }
                         else
                         {
-                            Console.WriteLine($"Không tìm thấy công dụng có mã {id}");
+                            Console.WriteLine($"Không tìm thấy công dụng có mã: {id}");
                         }
                     }
                 }
@@ -1401,7 +1417,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã công dụng cần xem chi tiết");
+                    string id = CheckId(0, "Nhập mã công dụng cần xem chi tiết ([U] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1490,10 +1506,10 @@ namespace AgriculturalSuppliesStore
                     string name = CheckInput(1, "Nhập tên cho thương hiệu");
                     if (name == "=exit") return;
 
-                    string email = CheckEmail(1, "Nhập email cho thương hiệu");
+                    string email = CheckEmail(1, "Nhập email cho thương hiệu ([Tên email] + [@] + [Tên miền])");
                     if (email == "=exit") return;
 
-                    string phoneNumber = CheckPhoneNumber(1, "Nhập số điện thoại cho thương hiệu");
+                    string phoneNumber = CheckPhoneNumber(1, "Nhập số điện thoại cho thương hiệu ([0] + [9 số nguyên >= 0] hoặc [+Mã quốc gia] + [Các số nguyên >= 0])");
                     if (phoneNumber == "=exit") return;
 
                     string address = CheckInput(1, "Nhập địa chỉ cho thương hiệu");
@@ -1513,7 +1529,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thương hiệu cần cập nhật");
+                    string id = CheckId(0, "Nhập mã thương hiệu cần cập nhật ([B] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1525,11 +1541,11 @@ namespace AgriculturalSuppliesStore
                             if (name == "=exit") return;
                             if (name == "_") name = brand.BrandName;
 
-                            string email = CheckEmail(0, "Nhập email mới cho thương hiệu");
+                            string email = CheckEmail(0, "Nhập email mới cho thương hiệu ([Tên email] + [@] + [Tên miền])");
                             if (email == "=exit") return;
                             if (email == "_") email = brand.BrandEmail;
 
-                            string phoneNumber = CheckPhoneNumber(0, "Nhập số điện thoại mới cho thương hiệu");
+                            string phoneNumber = CheckPhoneNumber(0, "Nhập số điện thoại mới cho thương hiệu ([0] + [9 số nguyên >= 0] hoặc [+Mã quốc gia] + [Các số nguyên >= 0])");
                             if (phoneNumber == "=exit") return;
                             if (phoneNumber == "_") phoneNumber = brand.BrandPhoneNumber;
 
@@ -1558,7 +1574,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thương hiệu cần xóa");
+                    string id = CheckId(0, "Nhập mã thương hiệu cần xóa ([B] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1574,19 +1590,25 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thương hiệu cần tìm");
+                    string id = CheckId(0, "Nhập mã thương hiệu cần tìm ([B] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
                         Brand brand = brands.SearchById(id);
 
-                        if (brand != null)
+                        Repository<Brand> brandsWithId = new Repository<Brand>();
+
+                        Brand brandSearch = brands.SearchById(id);
+
+                        if (brandSearch != null)
                         {
-                            brand.DisplayDetail();
+                            brandsWithId.Add(brandSearch);
+                            Console.SetCursorPosition(0, Console.CursorTop - 1);
+                            brandsWithId.DisplayAsTable();
                         }
                         else
                         {
-                            Console.WriteLine($"Không tìm thấy thương hiệu có mã {id}");
+                            Console.WriteLine($"Không tìm thấy thương hiệu có mã: {id}");
                         }
                     }
                 }
@@ -1639,7 +1661,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thương hiệu cần xem chi tiết");
+                    string id = CheckId(0, "Nhập mã thương hiệu cần xem chi tiết ([B] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1663,7 +1685,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã thương hiệu cần xem các sản phẩm");
+                    string id = CheckId(0, "Nhập mã thương hiệu cần xem các sản phẩm ([B] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1775,7 +1797,7 @@ namespace AgriculturalSuppliesStore
                     string dateOfBirth;
                     do
                     {
-                        dateOfBirth = CheckDate(1, "Nhập ngày sinh cho nhân viên");
+                        dateOfBirth = CheckDate(1, "Nhập ngày sinh cho nhân viên (dd/mm/yyyy)");
                         if (dateOfBirth == "=exit") return;
                         if (DateTime.Parse(dateOfBirth).AddYears(18) > DateTime.Now)
                         {
@@ -1788,7 +1810,7 @@ namespace AgriculturalSuppliesStore
                     }
                     while (true);
 
-                    string phoneNumber = CheckPhoneNumber(1, "Nhập số điện thoại cho nhân viên");
+                    string phoneNumber = CheckPhoneNumber(1, "Nhập số điện thoại cho nhân viên ([0] + [9 số nguyên >= 0] hoặc [+Mã quốc gia] + [Các số nguyên >= 0])");
                     if (phoneNumber == "=exit") return;
 
                     string address = CheckInput(1, "Nhập địa chỉ cho nhân viên");
@@ -1808,7 +1830,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhân viên cần cập nhật");
+                    string id = CheckId(0, "Nhập mã nhân viên cần cập nhật ([E] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1820,14 +1842,14 @@ namespace AgriculturalSuppliesStore
                             if (name == "=exit") return;
                             if (name == "_") name = employee.EmployeeName;
 
-                            string gender = CheckInput(0, "Nhập tên mới cho nhân viên");
+                            string gender = CheckInput(0, "Nhập giới tính mới cho nhân viên");
                             if (gender == "=exit") return;
                             if (gender == "_") gender = employee.EmployeeGender;
 
                             string dateOfBirth;
                             do
                             {
-                                dateOfBirth = CheckDate(0, "Nhập ngày sinh mới cho nhân viên");
+                                dateOfBirth = CheckDate(0, "Nhập ngày sinh mới cho nhân viên (dd/mm/yyyy)");
                                 if (dateOfBirth == "=exit") return;
                                 if (dateOfBirth != "_")
                                 {
@@ -1848,7 +1870,7 @@ namespace AgriculturalSuppliesStore
                             }
                             while (true);
 
-                            string phoneNumber = CheckPhoneNumber(0, "Nhập số điện thoại mới cho nhân viên");
+                            string phoneNumber = CheckPhoneNumber(0, "Nhập số điện thoại mới cho nhân viên ([0] + [9 số nguyên >= 0] hoặc [+Mã quốc gia] + [Các số nguyên >= 0])");
                             if (phoneNumber == "=exit") return;
                             if (phoneNumber == "_") phoneNumber = employee.EmployeePhoneNumber;
 
@@ -1877,7 +1899,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhân viên cần xóa");
+                    string id = CheckId(0, "Nhập mã nhân viên cần xóa ([E] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1893,19 +1915,23 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhân viên cần tìm");
+                    string id = CheckId(0, "Nhập mã nhân viên cần tìm ([E] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
-                        Employee employee = employees.SearchById(id);
+                        Repository<Employee> employeesWithId = new Repository<Employee>();
 
-                        if (employee != null)
+                        Employee employeeSearch = employees.SearchById(id);
+
+                        if (employeeSearch != null)
                         {
-                            employee.DisplayDetail();
+                            employeesWithId.Add(employeeSearch);
+                            Console.SetCursorPosition(0, Console.CursorTop - 1);
+                            employeesWithId.DisplayAsTable();
                         }
                         else
                         {
-                            Console.WriteLine($"Không tìm thấy nhân viên có mã {id}");
+                            Console.WriteLine($"Không tìm thấy nhân viên có mã: {id}");
                         }
                     }
                 }
@@ -1958,7 +1984,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhân viên cần xem chi tiết");
+                    string id = CheckId(0, "Nhập mã nhân viên cần xem chi tiết ([E] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -1982,7 +2008,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã nhân viên cần xem các nhóm sản phẩm đang phụ trách");
+                    string id = CheckId(0, "Nhập mã nhân viên cần xem các nhóm sản phẩm đang phụ trách ([E] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -2084,7 +2110,7 @@ namespace AgriculturalSuppliesStore
                     string productId;
                     do
                     {
-                        productId = CheckId(1, "Nhập mã sản phẩm cho liên kết");
+                        productId = CheckId(1, "Nhập mã sản phẩm cho liên kết ([P] + [Năm số nguyên >= 0])");
                         if (productId == "=exit") return;
                         if (productId != "_")
                         {
@@ -2107,7 +2133,7 @@ namespace AgriculturalSuppliesStore
                     string useId;
                     do
                     {
-                        useId = CheckId(1, "Nhập mã công dụng cho liên kết");
+                        useId = CheckId(1, "Nhập mã công dụng cho liên kết ([U] + [Năm số nguyên >= 0])");
                         if (useId == "=exit") return;
                         if (useId != "_")
                         {
@@ -2138,7 +2164,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã liên kết cần cập nhật");
+                    string id = CheckId(0, "Nhập mã liên kết cần cập nhật ([PU] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -2149,7 +2175,7 @@ namespace AgriculturalSuppliesStore
                             string productId;
                             do
                             {
-                                productId = CheckId(0, "Nhập mã sản phẩm mới cho liên kết");
+                                productId = CheckId(0, "Nhập mã sản phẩm mới cho liên kết ([P] + [Năm số nguyên >= 0])");
                                 if (productId == "=exit") return;
                                 if (productId != "_")
                                 {
@@ -2174,7 +2200,7 @@ namespace AgriculturalSuppliesStore
                             string useId;
                             do
                             {
-                                useId = CheckId(0, "Nhập mã công dụng mới cho liên kết");
+                                useId = CheckId(0, "Nhập mã công dụng mới cho liên kết ([U] + [Năm số nguyên >= 0])");
                                 if (useId == "=exit") return;
                                 if (useId != "_")
                                 {
@@ -2213,7 +2239,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã liên kết cần xóa");
+                    string id = CheckId(0, "Nhập mã liên kết cần xóa ([PU] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -2229,19 +2255,23 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã liên kết cần tìm");
+                    string id = CheckId(0, "Nhập mã liên kết cần tìm ([PU] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
-                        ProductUse productUse = productUses.SearchById(id);
+                        Repository<ProductUse> productUsesWithId = new Repository<ProductUse>();
 
-                        if (productUse != null)
+                        ProductUse productUseSearch = productUses.SearchById(id);
+
+                        if (productUseSearch != null)
                         {
-                            productUse.DisplayDetail();
+                            productUsesWithId.Add(productUseSearch);
+                            Console.SetCursorPosition(0, Console.CursorTop - 1);
+                            productUsesWithId.DisplayAsTable();
                         }
                         else
                         {
-                            Console.WriteLine($"Không tìm thấy liên kết có mã {id}");
+                            Console.WriteLine($"Không tìm thấy liên kết có mã: {id}");
                         }
                     }
                 }
@@ -2294,7 +2324,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã liên kết cần xem chi tiết");
+                    string id = CheckId(0, "Nhập mã liên kết cần xem chi tiết ([PU] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -2379,7 +2409,7 @@ namespace AgriculturalSuppliesStore
                     string productId;
                     do
                     {
-                        productId = CheckId(1, "Nhập mã sản phẩm cho liên kết");
+                        productId = CheckId(1, "Nhập mã sản phẩm cho liên kết ([P] + [Năm số nguyên >= 0])");
                         if (productId == "=exit") return;
                         if (productId != "_")
                         {
@@ -2402,7 +2432,7 @@ namespace AgriculturalSuppliesStore
                     string componentId;
                     do
                     {
-                        componentId = CheckId(1, "Nhập mã thành phần cho liên kết");
+                        componentId = CheckId(1, "Nhập mã thành phần cho liên kết ([C] + [Năm số nguyên >= 0])");
                         if (componentId == "=exit") return;
                         if (componentId != "_")
                         {
@@ -2422,7 +2452,7 @@ namespace AgriculturalSuppliesStore
                     }
                     while (true);
 
-                    string percentage = CheckInput(1, "Nhập tỉ lệ cho thành phần");
+                    string percentage = CheckInput(1, "Nhập tỉ lệ cho thành phần ([Số nguyên hoặc số thực >= 0] + [đơn vị])");
                     if (percentage == "=exit") return;
 
                     productComponents.Add(new ProductComponent(id, productId, componentId, percentage));
@@ -2436,7 +2466,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã liên kết cần cập nhật");
+                    string id = CheckId(0, "Nhập mã liên kết cần cập nhật ([PC] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -2447,7 +2477,7 @@ namespace AgriculturalSuppliesStore
                             string productId;
                             do
                             {
-                                productId = CheckId(0, "Nhập mã sản phẩm mới cho liên kết");
+                                productId = CheckId(0, "Nhập mã sản phẩm mới cho liên kết ([P] + [Năm số nguyên >= 0])");
                                 if (productId == "=exit") return;
                                 if (productId != "_")
                                 {
@@ -2472,7 +2502,7 @@ namespace AgriculturalSuppliesStore
                             string componentId;
                             do
                             {
-                                componentId = CheckId(0, "Nhập mã thành phần mới cho liên kết");
+                                componentId = CheckId(0, "Nhập mã thành phần mới cho liên kết ([C] + [Năm số nguyên >= 0])");
                                 if (componentId == "=exit") return;
                                 if (componentId != "_")
                                 {
@@ -2494,7 +2524,7 @@ namespace AgriculturalSuppliesStore
                             }
                             while (true);
 
-                            string percentage = CheckInput(0, "Nhập tỉ lệ mới cho thành phần");
+                            string percentage = CheckInput(0, "Nhập tỉ lệ mới cho thành phần ([Số nguyên hoặc số thực >= 0] + [đơn vị])");
                             if (percentage == "=exit") return;
                             if (percentage == "_") percentage = productComponent.ComponentPercentage;
 
@@ -2515,7 +2545,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã liên kết cần xóa");
+                    string id = CheckId(0, "Nhập mã liên kết cần xóa ([PC] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
@@ -2531,19 +2561,23 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã liên kết cần tìm");
+                    string id = CheckId(0, "Nhập mã liên kết cần tìm ([PC] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {
-                        ProductComponent productComponent = productComponents.SearchById(id);
+                        Repository<ProductComponent> productComponentsWithId = new Repository<ProductComponent>();
 
-                        if (productComponent != null)
+                        ProductComponent productComponentSearch = productComponents.SearchById(id);
+
+                        if (productComponentSearch != null)
                         {
-                            productComponent.DisplayDetail();
+                            productComponentsWithId.Add(productComponentSearch);
+                            Console.SetCursorPosition(0, Console.CursorTop - 1);
+                            productComponentsWithId.DisplayAsTable();
                         }
                         else
                         {
-                            Console.WriteLine($"Không tìm thấy liên kết có mã {id}");
+                            Console.WriteLine($"Không tìm thấy liên kết có mã: {id}");
                         }
                     }
                 }
@@ -2596,7 +2630,7 @@ namespace AgriculturalSuppliesStore
                     Console.WriteLine("Trường không đánh dấu (*) là trường không bắt buộc, có thể nhấn Enter để bỏ qua");
                     Console.WriteLine("Để thoát khỏi các trường nhập liệu, nhập lệnh =exit");
 
-                    string id = CheckId(0, "Nhập mã liên kết cần xem chi tiết");
+                    string id = CheckId(0, "Nhập mã liên kết cần xem chi tiết ([PC] + [Năm số nguyên >= 0])");
                     if (id == "=exit") return;
                     if (id != "_")
                     {

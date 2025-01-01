@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\setup\\AgriculturalSuppliesStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0EE4846D-89D5-45AB-820A-DFE2D74443A4}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\setup\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0EE4846D-89D5-45AB-820A-DFE2D74443A4}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|c:\\hocphan\\doancsn\\csn-da22ttc-phamthevinh-vattunongnghiep\\setup\\agriculturalsuppliesstore\\agriculturalsuppliesstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0EE4846D-89D5-45AB-820A-DFE2D74443A4}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EE4846D-89D5-45AB-820A-DFE2D74443A4}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|c:\\hocphan\\doancsn\\csn-da22ttc-phamthevinh-vattunongnghiep\\setup\\agriculturalsuppliesstore\\agriculturalsuppliesstore\\repositories\\data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0EE4846D-89D5-45AB-820A-DFE2D74443A4}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\setup\\AgriculturalSuppliesStore\\agriculturalsuppliesstore\\repositories\\data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0EE4846D-89D5-45AB-820A-DFE2D74443A4}|AgriculturalSuppliesStore\\AgriculturalSuppliesStore.csproj|solutionrelative:agriculturalsuppliesstore\\repositories\\data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Repositories\\Data.json",
               "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\setup\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Repositories\\Data.json",
               "RelativeToolTip": "AgriculturalSuppliesStore\\Repositories\\Data.json",
-              "ViewState": "AgIAAFMBAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-12-28T02:05:57.649Z",
               "EditorCaption": ""
@@ -41,7 +41,7 @@
               "RelativeDocumentMoniker": "AgriculturalSuppliesStore\\Program.cs",
               "ToolTip": "C:\\HocPhan\\DoAnCSN\\csn-da22ttc-phamthevinh-vattunongnghiep\\setup\\AgriculturalSuppliesStore\\AgriculturalSuppliesStore\\Program.cs",
               "RelativeToolTip": "AgriculturalSuppliesStore\\Program.cs",
-              "ViewState": "AgIAAB4HAAAAAAAAAAD4vygHAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAMoIAAAAAAAAAAAUwNcIAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-22T02:28:33.99Z",
               "EditorCaption": ""
