@@ -193,6 +193,8 @@ namespace AgriculturalSuppliesStore
 
                     productGroups.Add(new ProductGroup(id, UpperFirstChar(name), UpperFirstChar(description), employeeId));
                     BackupData();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Cập nhật nhóm sản phẩm
@@ -251,6 +253,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không thể cập nhật - Không tồn tại nhóm sản phẩm có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Xóa nhóm sản phẩm
@@ -267,6 +271,8 @@ namespace AgriculturalSuppliesStore
                         productGroups.Delete(id);
                         BackupData();
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm nhóm sản phẩm theo mã
@@ -295,6 +301,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy nhóm sản phẩm có mã: {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm nhóm sản phẩm theo từ khóa
@@ -329,6 +337,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy nhóm sản phẩm có từ khóa: {keyWord}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị tất cả nhóm sản phẩm
@@ -336,6 +346,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.WriteLine("\n--- Xem danh sách nhóm sản phẩm ---");
                     productGroups.DisplayAsTable();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị chi tiết một nhóm sản phẩm
@@ -360,6 +372,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm nhóm sản phẩm có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị các sản phẩm trong một nhóm sản phẩm
@@ -375,7 +389,7 @@ namespace AgriculturalSuppliesStore
                     {
                         if (productGroups.SearchById(id) != null)
                         {
-                            List<Fertilizer> fertilizersList = fertilizers.List.FindAll(item => item.GroupProductId == id.ToUpper());
+                            List<Fertilizer> fertilizersList = fertilizers.List.FindAll(item => item.ProductGroupId == id.ToUpper());
 
                             Repository<Fertilizer> fertilizersInProductGroup = new Repository<Fertilizer>();
 
@@ -401,6 +415,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Nhóm sản phẩm có mã {id} không tồn tại.");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
             }
 
@@ -499,11 +515,11 @@ namespace AgriculturalSuppliesStore
                         if (DateTime.Parse(expiryDate) <= DateTime.Parse(manufacturingDate))
                         {
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Ngày hết hạn phải sau ngày sản xuất. Vui lòng nhập lại." + new string(' ', 50));
+                            Console.WriteLine("Ngày hết hạn phải sau ngày sản xuất. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                         } else if(DateTime.Parse(expiryDate) <= DateTime.Now)
                         {
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Ngày hết hạn phải sau ngày hiện tại. Vui lòng nhập lại." + new string(' ', 50));
+                            Console.WriteLine("Ngày hết hạn phải sau ngày hiện tại. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                         } else
                         {
                             break;
@@ -563,6 +579,8 @@ namespace AgriculturalSuppliesStore
 
                     fertilizers.Add(new Fertilizer(id, UpperFirstChar(name), float.Parse(price), int.Parse(quantity), UpperFirstChar(description), UpperFirstChar(typePackaging), DateTime.Parse(manufacturingDate), DateTime.Parse(expiryDate), brandId, productGroupId));
                     BackupData();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Cập nhật sản phẩm
@@ -610,12 +628,12 @@ namespace AgriculturalSuppliesStore
                                     if (DateTime.Parse(expiryDate) <= DateTime.Parse(manufacturingDate))
                                     {
                                         Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("Ngày hết hạn mới phải sau ngày sản xuất. Vui lòng nhập lại." + new string(' ', 50));
+                                        Console.WriteLine("Ngày hết hạn mới phải sau ngày sản xuất. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                                     }
                                     else if (DateTime.Parse(expiryDate) <= DateTime.Now)
                                     {
                                         Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("Ngày hết hạn mới phải sau ngày hiện tại. Vui lòng nhập lại." + new string(' ', 50));
+                                        Console.WriteLine("Ngày hết hạn mới phải sau ngày hiện tại. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                                     }
                                     else
                                     {
@@ -677,7 +695,7 @@ namespace AgriculturalSuppliesStore
                                 }
                                 else
                                 {
-                                    productGroupId = fertilizer.GroupProductId;
+                                    productGroupId = fertilizer.ProductGroupId;
                                     break;
                                 }
                             }
@@ -691,6 +709,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không thể cập nhật - Không tồn tại sản phẩm có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Xóa sản phẩm
@@ -707,6 +727,8 @@ namespace AgriculturalSuppliesStore
                         fertilizers.Delete(id);
                         BackupData();
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm sản phẩm theo mã
@@ -735,6 +757,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy sản phẩm có mã: {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm sản phẩm theo từ khóa
@@ -769,6 +793,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy sản phẩm có từ khóa: {keyWord}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị tất cả sản phẩm
@@ -776,6 +802,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.WriteLine("\n--- Xem danh sách sản phẩm ---");
                     fertilizers.DisplayAsTable();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị chi tiết một sản phẩm
@@ -800,6 +828,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy sản phẩm có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị các thành phần của một sản phẩm
@@ -951,6 +981,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Sản phẩm có mã {id} không tồn tại.");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị các công dụng của một sản phẩm
@@ -998,6 +1030,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Sản phẩm có mã {id} không tồn tại.");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
             }
 
@@ -1073,6 +1107,8 @@ namespace AgriculturalSuppliesStore
 
                     components.Add(new Component(id, UpperFirstChar(name), UpperFirstChar(description)));
                     BackupData();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Cập nhật thành phần
@@ -1106,6 +1142,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không thể cập nhật - Không tồn tại thành phần có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Xóa thành phần
@@ -1122,6 +1160,8 @@ namespace AgriculturalSuppliesStore
                         components.Delete(id);
                         BackupData();
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm thành phần theo mã
@@ -1150,6 +1190,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy thành phần có mã: {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm thành phần theo từ khóa
@@ -1184,6 +1226,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy thành phần có từ khóa: {keyWord}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị tất cả thành phần
@@ -1191,6 +1235,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.WriteLine("\n--- Xem danh sách thành phần---");
                     components.DisplayAsTable();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị chi tiết một thành phần
@@ -1215,6 +1261,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy thành phần có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
             }
 
@@ -1290,6 +1338,8 @@ namespace AgriculturalSuppliesStore
 
                     uses.Add(new Use(id, UpperFirstChar(name), UpperFirstChar(description)));
                     BackupData();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Cập nhật công dụng
@@ -1323,6 +1373,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không thể cập nhật - Không tồn tại công dụng có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Xóa công dụng
@@ -1339,6 +1391,8 @@ namespace AgriculturalSuppliesStore
                         uses.Delete(id);
                         BackupData();
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm công dụng theo mã
@@ -1367,6 +1421,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy công dụng có mã: {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm công dụng theo từ khóa
@@ -1401,6 +1457,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy công dụng có từ khóa: {keyWord}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị tất cả công dụng
@@ -1408,6 +1466,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.WriteLine("\n--- Xem danh sách công dụng ---");
                     uses.DisplayAsTable();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị chi tiết một công dụng
@@ -1432,6 +1492,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy công dụng có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
             }
 
@@ -1520,6 +1582,8 @@ namespace AgriculturalSuppliesStore
 
                     brands.Add(new Brand(id, UpperFirstChar(name), email, phoneNumber, UpperFirstChar(address), UpperFirstChar(country)));
                     BackupData();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Cập nhật thương hiệu
@@ -1565,6 +1629,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không thể cập nhật - Không tồn tại thượng hiệu có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Xóa thương hiệu
@@ -1581,6 +1647,8 @@ namespace AgriculturalSuppliesStore
                         brands.Delete(id);
                         BackupData();
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm thương hiệu theo mã
@@ -1611,6 +1679,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy thương hiệu có mã: {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm thương hiệu theo từ khóa
@@ -1645,6 +1715,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy thương hiệu có từ khóa: {keyWord}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị tất cả thương hiệu
@@ -1652,6 +1724,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.WriteLine("\n--- Xem danh sách thương hiệu ---");
                     brands.DisplayAsTable();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị chi tiết một thương hiệu
@@ -1676,6 +1750,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy thương hiệu có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị các sản phẩm của một thương hiệu
@@ -1717,6 +1793,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Thương hiệu có mã {id} không tồn tại.");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
             }
 
@@ -1802,7 +1880,7 @@ namespace AgriculturalSuppliesStore
                         if (DateTime.Parse(dateOfBirth).AddYears(18) > DateTime.Now)
                         {
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
-                            Console.WriteLine("Ngày sinh không hợp lệ, nhân viên phải từ đủ 18 tuổi trở lên. Vui lòng nhập lại." + new string(' ', 50));
+                            Console.WriteLine("Ngày sinh không hợp lệ, nhân viên phải từ đủ 18 tuổi trở lên. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                         } else
                         {
                             break;
@@ -1821,6 +1899,8 @@ namespace AgriculturalSuppliesStore
 
                     employees.Add(new Employee(id, UpperFirstChar(name), UpperFirstChar(gender), DateTime.Parse(dateOfBirth), phoneNumber, UpperFirstChar(address), UpperFirstChar(position)));
                     BackupData();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Cập nhật nhân viên
@@ -1856,7 +1936,7 @@ namespace AgriculturalSuppliesStore
                                     if (DateTime.Parse(dateOfBirth).AddYears(18) > DateTime.Now)
                                     {
                                         Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                        Console.WriteLine("Ngày sinh mới không hợp lệ, nhân viên phải từ đủ 18 tuổi trở lên. Vui lòng nhập lại." + new string(' ', 50));
+                                        Console.WriteLine("Ngày sinh mới không hợp lệ, nhân viên phải từ đủ 18 tuổi trở lên. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                                     }
                                     else
                                     {
@@ -1890,6 +1970,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không thể cập nhật - Không tồn tại nhân viên có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Xóa nhân viên
@@ -1906,6 +1988,8 @@ namespace AgriculturalSuppliesStore
                         employees.Delete(id);
                         BackupData();
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm nhân viên theo mã
@@ -1934,6 +2018,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy nhân viên có mã: {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm nhân viên theo từ khóa
@@ -1968,6 +2054,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy nhân viên có từ khóa: {keyWord}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị tất cả nhân viên
@@ -1975,6 +2063,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.WriteLine("\n--- Xem danh sách nhân viên ---");
                     employees.DisplayAsTable();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị chi tiết một nhân viên
@@ -1999,6 +2089,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy nhân viên có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị các nhóm sản phẩm phụ trách bởi một nhân viên
@@ -2040,6 +2132,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Nhân viên có mã {id} không tồn tại.");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
             }
 
@@ -2155,6 +2249,8 @@ namespace AgriculturalSuppliesStore
 
                     productUses.Add(new ProductUse(id, productId, useId));
                     BackupData();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Cập nhật liên kết
@@ -2230,6 +2326,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không thể cập nhật - Không tồn tại liên kết có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Xóa liên kết
@@ -2246,6 +2344,8 @@ namespace AgriculturalSuppliesStore
                         productUses.Delete(id);
                         BackupData();
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm liên kết theo mã
@@ -2274,6 +2374,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy liên kết có mã: {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm liên kết theo từ khóa
@@ -2308,6 +2410,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy liên kết có từ khóa: {keyWord}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị tất cả liên kết
@@ -2315,6 +2419,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.WriteLine("\n--- Xem danh sách liên kết ---");
                     productUses.DisplayAsTable();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị chi tiết một liên kết
@@ -2339,6 +2445,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy liên kết có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
             }
 
@@ -2457,6 +2565,8 @@ namespace AgriculturalSuppliesStore
 
                     productComponents.Add(new ProductComponent(id, productId, componentId, percentage));
                     BackupData();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Cập nhật liên kết
@@ -2536,6 +2646,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không thể cập nhật - Không tồn tại liên kết có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Xóa liên kết
@@ -2552,6 +2664,8 @@ namespace AgriculturalSuppliesStore
                         productComponents.Delete(id);
                         BackupData();
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm liên kết theo mã
@@ -2580,6 +2694,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy liên kết có mã: {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Tìm liên kết theo từ khóa
@@ -2614,6 +2730,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy liên kết có từ khóa: {keyWord}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị tất cả liên kết
@@ -2621,6 +2739,8 @@ namespace AgriculturalSuppliesStore
                 {
                     Console.WriteLine("\n--- Xem danh sách liên kết ---");
                     productComponents.DisplayAsTable();
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
 
                 // Hiển thị chi tiết một liên kết
@@ -2645,6 +2765,8 @@ namespace AgriculturalSuppliesStore
                             Console.WriteLine($"Không tìm thấy liên kết có mã {id}");
                         }
                     }
+                    Console.Write("Nhấn phím Enter để tiếp tục . . .");
+                    Console.ReadLine();
                 }
             }
 
@@ -2675,7 +2797,7 @@ namespace AgriculturalSuppliesStore
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
                             int index = request.IndexOf("(");
                             int length = index > 0 ? index - 7 : request.Length - 6;
-                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} là trường bắt buộc. Vui lòng nhập lại." + new string(' ', 50));
+                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} là trường bắt buộc. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                         }
                     }
                 } while (string.IsNullOrWhiteSpace(input));
@@ -2696,7 +2818,7 @@ namespace AgriculturalSuppliesStore
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
                             int index = request.IndexOf("(");
                             int length = index > 0 ? index - 7 : request.Length - 6;
-                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
+                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                         }
                         else
                         {
@@ -2726,7 +2848,7 @@ namespace AgriculturalSuppliesStore
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
                             int index = request.IndexOf("(");
                             int length = index > 0 ? index - 7 : request.Length - 6;
-                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
+                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                         }
                         else
                         {
@@ -2756,7 +2878,7 @@ namespace AgriculturalSuppliesStore
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
                             int index = request.IndexOf("(");
                             int length = index > 0 ? index - 7 : request.Length - 6;
-                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
+                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                         }
                         else
                         {
@@ -2786,7 +2908,7 @@ namespace AgriculturalSuppliesStore
                             Console.SetCursorPosition(0, Console.CursorTop - 1);
                             int index = request.IndexOf("(");
                             int length = index > 0 ? index - 7 : request.Length - 6;
-                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
+                            Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                         }
                         else
                         {
@@ -2820,7 +2942,7 @@ namespace AgriculturalSuppliesStore
                                 Console.SetCursorPosition(0, Console.CursorTop - 1);
                                 int index = request.IndexOf("(");
                                 int length = index > 0 ? index - 7 : request.Length - 6;
-                                Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
+                                Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                             }
                             else
                             {
@@ -2833,7 +2955,7 @@ namespace AgriculturalSuppliesStore
                                 Console.SetCursorPosition(0, Console.CursorTop - 1);
                                 int index = request.IndexOf("(");
                                 int length = index > 0 ? index - 7 : request.Length - 6;
-                                Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại." + new string(' ', 50));
+                                Console.WriteLine($"{char.ToUpper(request[5]) + request.Substring(6, length)} không hợp lệ. Vui lòng nhập lại.".PadRight(Console.WindowWidth));
                             }
                             else
                             {

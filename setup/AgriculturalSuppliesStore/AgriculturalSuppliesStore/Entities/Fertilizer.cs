@@ -21,9 +21,9 @@ namespace AgriculturalSuppliesStore.Entities
         public DateTime FertilizerExpiryDate { get => this.fertilizerExpiryDate; set => this.fertilizerExpiryDate = value; }
         public override string ProductDescription { get => base.productDescription; set => base.productDescription = value; }
         public override string BrandId { get => base.brandId; set => base.brandId = value; }
-        public override string GroupProductId { get => base.groupProductId; set => base.groupProductId = value; }
+        public override string ProductGroupId { get => base.productGroupId; set => base.productGroupId = value; }
 
-        public Fertilizer(string id, string name, float price, int quantity, string description, string packagingType, DateTime manufacturingDate, DateTime expiryDate, string brandId, string groupProductId) : base(id, name, price, quantity, description, brandId, groupProductId)
+        public Fertilizer(string id, string name, float price, int quantity, string description, string packagingType, DateTime manufacturingDate, DateTime expiryDate, string brandId, string productGroupId) : base(id, name, price, quantity, description, brandId, productGroupId)
         {
             this.fertilizerPackagingType = packagingType;
             this.fertilizerManufacturingDate = manufacturingDate;
@@ -47,7 +47,7 @@ namespace AgriculturalSuppliesStore.Entities
                     base.productQuantity == other.productQuantity &&
                     base.productDescription == other.productDescription &&
                     base.brandId == other.brandId &&
-                    base.groupProductId == other.groupProductId &&
+                    base.productGroupId == other.productGroupId &&
                     this.fertilizerPackagingType == other.fertilizerPackagingType &&
                     this.fertilizerManufacturingDate == other.fertilizerManufacturingDate &&
                     this.fertilizerExpiryDate == other.fertilizerExpiryDate;
@@ -64,7 +64,7 @@ namespace AgriculturalSuppliesStore.Entities
             hash = hash * 23 + base.productQuantity.GetHashCode();
             hash = hash * 23 + base.productDescription.GetHashCode();
             hash = hash * 23 + base.brandId.GetHashCode();
-            hash = hash * 23 + base.groupProductId.GetHashCode();
+            hash = hash * 23 + base.productGroupId.GetHashCode();
             hash = hash * 23 + this.fertilizerPackagingType.GetHashCode();
             hash = hash * 23 + this.fertilizerManufacturingDate.GetHashCode();
             hash = hash * 23 + this.fertilizerExpiryDate.GetHashCode();

@@ -14,7 +14,7 @@ namespace AgriculturalSuppliesStore.Entities
         protected int productQuantity;
         protected string productDescription;
         protected string brandId;
-        protected string groupProductId;
+        protected string productGroupId;
 
         public virtual string Id { get => this.id; set => this.id = value; }
         public virtual string ProductName { get => this.productName; set => this.productName = value; }
@@ -22,9 +22,9 @@ namespace AgriculturalSuppliesStore.Entities
         public virtual int ProductQuantity { get => this.productQuantity; set => this.productQuantity = value; }
         public virtual string ProductDescription { get => this.productDescription; set => this.productDescription = value; }
         public virtual string BrandId { get => this.brandId; set => this.brandId = value; }
-        public virtual string GroupProductId { get => this.groupProductId; set => this.groupProductId = value; }
+        public virtual string ProductGroupId { get => this.productGroupId; set => this.productGroupId = value; }
 
-        public Product(string id, string name, float price, int quantity, string description, string brandId, string groupProductId)
+        public Product(string id, string name, float price, int quantity, string description, string brandId, string productGroupId)
         {
             this.id = id;
             this.productName = name;
@@ -32,7 +32,7 @@ namespace AgriculturalSuppliesStore.Entities
             this.productQuantity = quantity;
             this.productDescription = description;
             this.brandId = brandId;
-            this.groupProductId = groupProductId;
+            this.productGroupId = productGroupId;
         }
 
         public virtual void DisplayDetail()
@@ -43,7 +43,7 @@ namespace AgriculturalSuppliesStore.Entities
             Console.WriteLine($"Số lượng sản phẩm: {this.productQuantity}");
             Console.WriteLine($"Mô tả sản phẩm: {this.productDescription}");
             Console.WriteLine($"Mã thương hiệu: {this.brandId}");
-            Console.WriteLine($"Mã nhóm sản phẩm: {this.groupProductId}");
+            Console.WriteLine($"Mã nhóm sản phẩm: {this.productGroupId}");
         }
 
         public override bool Equals(object obj)
@@ -55,7 +55,7 @@ namespace AgriculturalSuppliesStore.Entities
                     this.productQuantity == other.productQuantity &&
                     this.productDescription == other.productDescription &&
                     this.brandId == other.brandId &&
-                    this.groupProductId == other.groupProductId;
+                    this.productGroupId == other.productGroupId;
             }
             return false;
         }
@@ -69,7 +69,7 @@ namespace AgriculturalSuppliesStore.Entities
             hash = hash * 23 + this.productQuantity.GetHashCode();
             hash = hash * 23 + this.productDescription.GetHashCode();
             hash = hash * 23 + this.brandId.GetHashCode();
-            hash = hash * 23 + this.groupProductId.GetHashCode();
+            hash = hash * 23 + this.productGroupId.GetHashCode();
             return hash;
         }
     }

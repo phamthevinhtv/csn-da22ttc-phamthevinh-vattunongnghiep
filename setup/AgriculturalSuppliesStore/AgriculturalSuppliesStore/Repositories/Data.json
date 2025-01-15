@@ -24,7 +24,7 @@
       "FertilizerExpiryDate": "2026-01-16T00:00:00",
       "ProductDescription": "Phân đạm cao, tan nhanh, tăng hiệu quả cây trồng",
       "BrandId": "B00001",
-      "GroupProductId": "PG00001"
+      "ProductGroupId": "PG00001"
     },
     {
       "Id": "P00002",
@@ -36,7 +36,7 @@
       "FertilizerExpiryDate": "2026-01-16T00:00:00",
       "ProductDescription": "Cung cấp đạm hiệu quả, tăng năng suất và sức khỏe cây.",
       "BrandId": "B00001",
-      "GroupProductId": "PG00001"
+      "ProductGroupId": "PG00001"
     }
   ],
   "brands": [
